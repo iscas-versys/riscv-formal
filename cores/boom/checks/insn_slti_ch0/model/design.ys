@@ -1,9 +1,0 @@
-# running in insn_slti_ch0/src/
-read -sv insn_slti_ch0.sv /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/wrapper.sv /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/SimTop.sv /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/define.sv /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/DifftestArchEvent.v /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/DifftestArchIntRegState.v /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/DifftestCSRState.v /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/DifftestInstrCommit.v /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/DifftestTrapEvent.v /home/stormy/curricular/keyan/code/riscv-formal/cores/boom/../../cores/boom/MemRWHelper.v
-prep -flatten -nordff -top rvfi_testbench
-chformal -early
-
-hierarchy -smtcheck
-rename -witness
-write_jny -no-connections ../model/design.json
-write_rtlil ../model/design.il

@@ -1,5 +1,0 @@
-Elapsed clock time [H:MM:SS (secs)]: 0:08:59 (539)
-Elapsed process time [H:MM:SS (secs)]: 0:09:14 (554)
-engine_0 (smtbmc bitwuzla) returned FAIL
-counterexample trace: engine_0/trace.vcd
-  failed assertion rvfi_testbench._witness_.check_flatten_checker_inst__assert_rvfi_insn_check_sv_177_87 at rvfi_insn_check.sv:177.7-177.40 in step 20
