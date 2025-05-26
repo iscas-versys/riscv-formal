@@ -116,7 +116,7 @@ module rvfi_wrapper (
 		.auto_buffer_out_e_valid(auto_buffer_out_e_valid),
 		.auto_buffer_out_e_bits_sink(auto_buffer_out_e_bits_sink),
 		`RVFI_CONN,
-		.flying_select_0(flying_select_0)
+		//.flying_select_0(flying_select_0)
 		// .rvfi_valid     (rvfi_valid    ), \
 		// .rvfi_order     (rvfi_order    ), \
 		// .rvfi_insn      (rvfi_insn     ), \

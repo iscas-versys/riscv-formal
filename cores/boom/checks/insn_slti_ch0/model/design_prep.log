@@ -1,0 +1,201 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.50+56 (git sha1 78960292d, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module rvfi_testbench.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rvfi_testbench..
+Removed 150 unused cells and 150 unused wires.
+<suppressed ~151 debug messages>
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rvfi_testbench..
+Removed 3 unused cells and 3 unused wires.
+<suppressed ~4 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module rvfi_testbench...
+Warning: Wire rvfi_testbench.\wrapper.uut.tlMasterXbar.auto_anon_out_b_bits_source [2] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.tlMasterXbar.auto_anon_out_d_bits_source [2] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.tlMasterXbar.auto_anon_out_b_valid is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.tlMasterXbar.auto_anon_out_d_valid is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.tlMasterXbar.auto_anon_out_a_ready is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_param [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_param [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_size [2] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_size [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_size [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_source [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_source [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [31] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [30] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [29] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [28] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [27] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [26] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [25] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [24] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [23] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [22] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [21] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [20] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [19] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [18] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [17] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [16] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [15] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [14] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [13] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [12] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [11] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [10] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [9] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [8] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [7] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [6] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [5] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [4] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [3] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [2] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.prober.io_req_bits_address [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.io_mem_grant_bits_sink [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.io_mem_grant_bits_sink [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.io_mem_grant_bits_size [2] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.io_mem_grant_bits_size [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.io_mem_grant_bits_size [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.io_mem_grant_bits_opcode [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0._coh_on_grant_T [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0._coh_on_grant_T [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.io_mem_grant_bits_opcode [2] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.mshrs_0.beats1_opdata is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [63] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [62] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [61] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [60] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [59] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [58] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [57] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [56] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [55] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [54] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [53] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [52] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [51] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [50] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [49] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [48] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [47] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [46] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [45] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [44] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [43] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [42] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [41] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [40] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [39] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [38] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [37] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [36] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [35] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [34] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [33] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [32] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [31] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [30] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [29] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [28] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [27] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [26] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [25] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [24] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [23] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [22] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [21] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [20] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [19] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [18] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [17] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [16] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [15] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [14] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [13] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [12] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [11] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [10] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [9] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [8] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [7] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [6] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [5] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [4] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [3] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [2] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.lb_write_arb_io_out_bits_data [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.mshrs.io_mem_finish_ready is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.auto_out_d_bits_source [1] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.auto_out_d_bits_source [0] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.dcache.auto_out_c_ready is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.core.csr.d_interrupts [14] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.core.csr.io_interrupts_seip is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.core.csr.io_hartid is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.core.csr._GEN_88 [11] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.core.csr._GEN_88 [7] is used but has no driver.
+Warning: Wire rvfi_testbench.\wrapper.uut.core.csr._GEN_88 [3] is used but has no driver.
+Found and reported 128 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module rvfi_testbench.
+<suppressed ~4 debug messages>
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\rvfi_testbench'.
+<suppressed ~2 debug messages>
+Removed a total of 1 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rvfi_testbench..
+Removed 4997 unused cells and 5122 unused wires.
+<suppressed ~5002 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \rvfi_testbench..
+Removed 0 unused cells and 75 unused wires.
+<suppressed ~1 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+Warnings: 128 unique messages, 128 total
+End of script. Logfile hash: 2b427a3604, CPU: user 10.87s system 0.16s, MEM: 655.32 MB peak
+Yosys 0.50+56 (git sha1 78960292d, clang++ 18.1.8 -fPIC -O3)
+Time spent: 50% 4x opt_clean (5 sec), 8% 1x opt_expr (0 sec), ...
