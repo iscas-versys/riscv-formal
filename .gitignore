@@ -1,2 +1,3 @@
 /cores/.gitignore
 cores/boom/SimTop.sv
+cores/nutshell/NutCore.sv
