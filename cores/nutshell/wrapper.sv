@@ -4,74 +4,74 @@ module rvfi_wrapper (
 	`RVFI_OUTPUTS
 );
     // input
-    (* keep *) wire        io_imem_mem_req_ready,
-    (* keep *) wire        io_imem_mem_resp_valid,
-    (* keep *) wire [3:0]  io_imem_mem_resp_bits_cmd,
-    (* keep *) wire [63:0] io_imem_mem_resp_bits_rdata,
-    (* keep *) wire        io_imem_coh_req_valid,
-    (* keep *) wire [31:0] io_imem_coh_req_bits_addr,
-    (* keep *) wire [2:0]  io_imem_coh_req_bits_size,
-    (* keep *) wire [3:0]  io_imem_coh_req_bits_cmd,
-    (* keep *) wire [3:0]  io_imem_coh_req_bits_wmask,
-    (* keep *) wire [31:0] io_imem_coh_req_bits_wdata,
-    (* keep *) wire        io_imem_coh_resp_ready,
-    (* keep *) wire        io_dmem_mem_req_ready,
-    (* keep *) wire        io_dmem_mem_resp_valid,
-    (* keep *) wire [3:0]  io_dmem_mem_resp_bits_cmd,
-    (* keep *) wire [63:0] io_dmem_mem_resp_bits_rdata,
-    (* keep *) wire        io_dmem_coh_req_valid,
-    (* keep *) wire [31:0] io_dmem_coh_req_bits_addr,
-    (* keep *) wire [2:0]  io_dmem_coh_req_bits_size,
-    (* keep *) wire [3:0]  io_dmem_coh_req_bits_cmd,
-    (* keep *) wire [3:0]  io_dmem_coh_req_bits_wmask,
-    (* keep *) wire [31:0] io_dmem_coh_req_bits_wdata,
-    (* keep *) wire        io_dmem_coh_resp_ready,
-    (* keep *) wire        io_mmio_req_ready,
-    (* keep *) wire        io_mmio_resp_valid,
-    (* keep *) wire [3:0]  io_mmio_resp_bits_cmd,
-    (* keep *) wire [63:0] io_mmio_resp_bits_rdata,
-    (* keep *) wire        io_frontend_req_valid,
-    (* keep *) wire [31:0] io_frontend_req_bits_addr,
-    (* keep *) wire [2:0]  io_frontend_req_bits_size,
-    (* keep *) wire [3:0]  io_frontend_req_bits_cmd,
-    (* keep *) wire [3:0]  io_frontend_req_bits_wmask,
-    (* keep *) wire [31:0] io_frontend_req_bits_wdata,
-    (* keep *) wire        io_frontend_resp_ready,
+    (* keep *) wire        io_imem_mem_req_ready;
+    (* keep *) wire        io_imem_mem_resp_valid;
+    (* keep *) wire [3:0]  io_imem_mem_resp_bits_cmd;
+    (* keep *) wire [63:0] io_imem_mem_resp_bits_rdata;
+    (* keep *) wire        io_imem_coh_req_valid;
+    (* keep *) wire [31:0] io_imem_coh_req_bits_addr;
+    (* keep *) wire [2:0]  io_imem_coh_req_bits_size;
+    (* keep *) wire [3:0]  io_imem_coh_req_bits_cmd;
+    (* keep *) wire [3:0]  io_imem_coh_req_bits_wmask;
+    (* keep *) wire [31:0] io_imem_coh_req_bits_wdata;
+    (* keep *) wire        io_imem_coh_resp_ready;
+    (* keep *) wire        io_dmem_mem_req_ready;
+    (* keep *) wire        io_dmem_mem_resp_valid;
+    (* keep *) wire [3:0]  io_dmem_mem_resp_bits_cmd;
+    (* keep *) wire [63:0] io_dmem_mem_resp_bits_rdata;
+    (* keep *) wire        io_dmem_coh_req_valid;
+    (* keep *) wire [31:0] io_dmem_coh_req_bits_addr;
+    (* keep *) wire [2:0]  io_dmem_coh_req_bits_size;
+    (* keep *) wire [3:0]  io_dmem_coh_req_bits_cmd;
+    (* keep *) wire [3:0]  io_dmem_coh_req_bits_wmask;
+    (* keep *) wire [31:0] io_dmem_coh_req_bits_wdata;
+    (* keep *) wire        io_dmem_coh_resp_ready;
+    (* keep *) wire        io_mmio_req_ready;
+    (* keep *) wire        io_mmio_resp_valid;
+    (* keep *) wire [3:0]  io_mmio_resp_bits_cmd;
+    (* keep *) wire [63:0] io_mmio_resp_bits_rdata;
+    (* keep *) wire        io_frontend_req_valid;
+    (* keep *) wire [31:0] io_frontend_req_bits_addr;
+    (* keep *) wire [2:0]  io_frontend_req_bits_size;
+    (* keep *) wire [3:0]  io_frontend_req_bits_cmd;
+    (* keep *) wire [3:0]  io_frontend_req_bits_wmask;
+    (* keep *) wire [31:0] io_frontend_req_bits_wdata;
+    (* keep *) wire        io_frontend_resp_ready;
 
     // output
-    (* keep *) wire         io_dmem_coh_req_ready,
-    (* keep *) wire         io_imem_mem_req_valid,
-    (* keep *) wire  [31:0] io_imem_mem_req_bits_addr,
-    (* keep *) wire  [2:0]  io_imem_mem_req_bits_size,
-    (* keep *) wire  [3:0]  io_imem_mem_req_bits_cmd,
-    (* keep *) wire  [3:0]  io_imem_mem_req_bits_wmask,
-    (* keep *) wire  [31:0] io_imem_mem_req_bits_wdata,
-    (* keep *) wire         io_imem_mem_resp_ready,
-    (* keep *) wire         io_imem_coh_req_ready,
-    (* keep *) wire         io_imem_coh_resp_valid,
-    (* keep *) wire  [3:0]  io_imem_coh_resp_bits_cmd,
-    (* keep *) wire  [63:0] io_imem_coh_resp_bits_rdata,
-    (* keep *) wire         io_dmem_mem_req_valid,
-    (* keep *) wire  [31:0] io_dmem_mem_req_bits_addr,
-    (* keep *) wire  [2:0]  io_dmem_mem_req_bits_size,
-    (* keep *) wire  [3:0]  io_dmem_mem_req_bits_cmd,
-    (* keep *) wire  [3:0]  io_dmem_mem_req_bits_wmask,
-    (* keep *) wire  [31:0] io_dmem_mem_req_bits_wdata,
-    (* keep *) wire         io_dmem_mem_resp_ready,
-    (* keep *) wire         io_dmem_coh_resp_valid,
-    (* keep *) wire  [3:0]  io_dmem_coh_resp_bits_cmd,
-    (* keep *) wire  [63:0] io_dmem_coh_resp_bits_rdata,
-    (* keep *) wire         io_mmio_req_valid,
-    (* keep *) wire  [31:0] io_mmio_req_bits_addr,
-    (* keep *) wire  [2:0]  io_mmio_req_bits_size,
-    (* keep *) wire  [3:0]  io_mmio_req_bits_cmd,
-    (* keep *) wire  [3:0]  io_mmio_req_bits_wmask,
-    (* keep *) wire  [31:0] io_mmio_req_bits_wdata,
-    (* keep *) wire         io_mmio_resp_ready,
-    (* keep *) wire         io_frontend_req_ready,
-    (* keep *) wire         io_frontend_resp_valid,
-    (* keep *) wire  [3:0]  io_frontend_resp_bits_cmd,
-    (* keep *) wire  [63:0] io_frontend_resp_bits_rdata,
+    (* keep *) wire         io_dmem_coh_req_ready;
+    (* keep *) wire         io_imem_mem_req_valid;
+    (* keep *) wire  [31:0] io_imem_mem_req_bits_addr;
+    (* keep *) wire  [2:0]  io_imem_mem_req_bits_size;
+    (* keep *) wire  [3:0]  io_imem_mem_req_bits_cmd;
+    (* keep *) wire  [3:0]  io_imem_mem_req_bits_wmask;
+    (* keep *) wire  [31:0] io_imem_mem_req_bits_wdata;
+    (* keep *) wire         io_imem_mem_resp_ready;
+    (* keep *) wire         io_imem_coh_req_ready;
+    (* keep *) wire         io_imem_coh_resp_valid;
+    (* keep *) wire  [3:0]  io_imem_coh_resp_bits_cmd;
+    (* keep *) wire  [63:0] io_imem_coh_resp_bits_rdata;
+    (* keep *) wire         io_dmem_mem_req_valid;
+    (* keep *) wire  [31:0] io_dmem_mem_req_bits_addr;
+    (* keep *) wire  [2:0]  io_dmem_mem_req_bits_size;
+    (* keep *) wire  [3:0]  io_dmem_mem_req_bits_cmd;
+    (* keep *) wire  [3:0]  io_dmem_mem_req_bits_wmask;
+    (* keep *) wire  [31:0] io_dmem_mem_req_bits_wdata;
+    (* keep *) wire         io_dmem_mem_resp_ready;
+    (* keep *) wire         io_dmem_coh_resp_valid;
+    (* keep *) wire  [3:0]  io_dmem_coh_resp_bits_cmd;
+    (* keep *) wire  [63:0] io_dmem_coh_resp_bits_rdata;
+    (* keep *) wire         io_mmio_req_valid;
+    (* keep *) wire  [31:0] io_mmio_req_bits_addr;
+    (* keep *) wire  [2:0]  io_mmio_req_bits_size;
+    (* keep *) wire  [3:0]  io_mmio_req_bits_cmd;
+    (* keep *) wire  [3:0]  io_mmio_req_bits_wmask;
+    (* keep *) wire  [31:0] io_mmio_req_bits_wdata;
+    (* keep *) wire         io_mmio_resp_ready;
+    (* keep *) wire         io_frontend_req_ready;
+    (* keep *) wire         io_frontend_resp_valid;
+    (* keep *) wire  [3:0]  io_frontend_resp_bits_cmd;
+    (* keep *) wire  [63:0] io_frontend_resp_bits_rdata;
 	//  (* keep *) wire trap;
 	//  (* keep *) `rvformal_rand_reg mem_ready;
 	//  (* keep *) `rvformal_rand_reg [31:0] mem_rdata;
