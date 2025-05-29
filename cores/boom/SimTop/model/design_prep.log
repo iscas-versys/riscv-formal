@@ -1,0 +1,998 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.50+56 (git sha1 78960292d, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c.
+Found 0 SCCs in module TLWidthWidget8_8.
+Found 0 SCCs in module TLWidthWidget8_7.
+Found 0 SCCs in module TLWidthWidget8_2.
+Found 0 SCCs in module Rob.
+Found 0 SCCs in module RenameStage.
+Found 0 SCCs in module RenameMapTable.
+Found 0 SCCs in module RenameFreeList.
+Found 0 SCCs in module RenameBusyTable.
+Found 0 SCCs in module RegisterReadDecode_2.
+Found 0 SCCs in module RegisterReadDecode_1.
+Found 0 SCCs in module RegisterReadDecode.
+Found 0 SCCs in module RegisterRead.
+Found 0 SCCs in module RegisterFileSynthesizable.
+Found 0 SCCs in module RVCExpander.
+Found 0 SCCs in module Queue_43.
+Found 0 SCCs in module Queue_41.
+Found 0 SCCs in module Queue_40.
+Found 0 SCCs in module PipelinedMultiplier.
+Found 0 SCCs in module PipelinedMulUnit.
+Found 0 SCCs in module PTW.
+Found 0 SCCs in module PMAChecker.
+Found 0 SCCs in module OptimizationBarrier_UInt.
+Found 0 SCCs in module OptimizationBarrier_TLBEntryData.
+Found 0 SCCs in module OptimizationBarrier_PTE.
+Found 0 SCCs in module OptimizationBarrier_EntryData.
+Found 0 SCCs in module NBDTLB.
+Found 0 SCCs in module MulDiv.
+Found 0 SCCs in module MemAddrCalcUnit.
+Found 0 SCCs in module LSU.
+Found 0 SCCs in module L1MetadataArray.
+Found 0 SCCs in module IssueUnitCollapsing_1.
+Found 0 SCCs in module IssueUnitCollapsing.
+Found 0 SCCs in module IssueSlot.
+Found 0 SCCs in module IntXbar_i4_o1.
+Found 0 SCCs in module ITLB.
+Found 0 SCCs in module ICache.
+Found 0 SCCs in module HellaCacheArbiter.
+Found 0 SCCs in module ForwardingAgeLogic.
+Found 0 SCCs in module FetchTargetQueue.
+Found 0 SCCs in module FetchBuffer.
+Found 0 SCCs in module DivUnit.
+Found 0 SCCs in module DecodeUnit.
+Found 0 SCCs in module Core.
+Found 0 SCCs in module CSRFile.
+Found 0 SCCs in module BundleBridgeNexus_6.
+Found 0 SCCs in module BranchMaskGenerationLogic.
+Found 0 SCCs in module BranchKillableQueue_2.
+Found 0 SCCs in module BranchKillableQueue.
+Found 0 SCCs in module BranchDecode.
+Found 0 SCCs in module BoomWritebackUnit.
+Found 0 SCCs in module BoomTile.
+Found 0 SCCs in module BoomProbeUnit.
+Found 0 SCCs in module BoomNonBlockingDCache.
+Found 0 SCCs in module BoomMSHRFile.
+Found 0 SCCs in module BoomMSHR.
+Found 0 SCCs in module BoomIOMSHR.
+Found 0 SCCs in module BoomFrontend.
+Found 0 SCCs in module BoomDuplicatedDataArray.
+Found 0 SCCs in module BoomCore.
+Found 0 SCCs in module BasicDispatcher.
+Found 0 SCCs in module Arbiter_8.
+Found 0 SCCs in module Arbiter_7.
+Found 0 SCCs in module Arbiter_6.
+Found 0 SCCs in module Arbiter_5.
+Found 0 SCCs in module Arbiter_4.
+Found 0 SCCs in module Arbiter_3.
+Found 0 SCCs in module Arbiter_2.
+Found 0 SCCs in module Arbiter_18.
+Found 0 SCCs in module Arbiter_17.
+Found 0 SCCs in module Arbiter_16.
+Found 0 SCCs in module Arbiter_14.
+Found 0 SCCs in module Arbiter_12.
+Found 0 SCCs in module Arbiter_10.
+Found 0 SCCs in module Arbiter_1.
+Found 0 SCCs in module Arbiter.
+Found 0 SCCs in module AMOALU.
+Found 0 SCCs in module ALUUnit_1.
+Found 0 SCCs in module ALUUnit.
+Found 0 SCCs in module ALUExeUnit_2.
+Found 0 SCCs in module ALUExeUnit_1.
+Found 0 SCCs in module ALUExeUnit.
+Found 0 SCCs in module ALU.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c..
+Finding unused cells or wires in module \TLWidthWidget8_8..
+Finding unused cells or wires in module \TLWidthWidget8_7..
+Finding unused cells or wires in module \TLWidthWidget8_2..
+Finding unused cells or wires in module \Rob..
+Finding unused cells or wires in module \RenameStage..
+Finding unused cells or wires in module \RenameMapTable..
+Finding unused cells or wires in module \RenameFreeList..
+Finding unused cells or wires in module \RenameBusyTable..
+Finding unused cells or wires in module \RegisterReadDecode_2..
+Finding unused cells or wires in module \RegisterReadDecode_1..
+Finding unused cells or wires in module \RegisterReadDecode..
+Finding unused cells or wires in module \RegisterRead..
+Finding unused cells or wires in module \RegisterFileSynthesizable..
+Finding unused cells or wires in module \RVCExpander..
+Finding unused cells or wires in module \Queue_43..
+Finding unused cells or wires in module \Queue_41..
+Finding unused cells or wires in module \Queue_40..
+Finding unused cells or wires in module \PipelinedMultiplier..
+Finding unused cells or wires in module \PipelinedMulUnit..
+Finding unused cells or wires in module \PTW..
+Finding unused cells or wires in module \PMAChecker..
+Finding unused cells or wires in module \OptimizationBarrier_UInt..
+Finding unused cells or wires in module \OptimizationBarrier_TLBEntryData..
+Finding unused cells or wires in module \OptimizationBarrier_PTE..
+Finding unused cells or wires in module \OptimizationBarrier_EntryData..
+Finding unused cells or wires in module \NBDTLB..
+Finding unused cells or wires in module \MulDiv..
+Finding unused cells or wires in module \MemAddrCalcUnit..
+Finding unused cells or wires in module \LSU..
+Finding unused cells or wires in module \L1MetadataArray..
+Finding unused cells or wires in module \IssueUnitCollapsing_1..
+Finding unused cells or wires in module \IssueUnitCollapsing..
+Finding unused cells or wires in module \IssueSlot..
+Finding unused cells or wires in module \IntXbar_i4_o1..
+Finding unused cells or wires in module \ITLB..
+Finding unused cells or wires in module \ICache..
+Finding unused cells or wires in module \HellaCacheArbiter..
+Finding unused cells or wires in module \ForwardingAgeLogic..
+Finding unused cells or wires in module \FetchTargetQueue..
+Finding unused cells or wires in module \FetchBuffer..
+Finding unused cells or wires in module \DivUnit..
+Finding unused cells or wires in module \DecodeUnit..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \CSRFile..
+Finding unused cells or wires in module \BundleBridgeNexus_6..
+Finding unused cells or wires in module \BranchMaskGenerationLogic..
+Finding unused cells or wires in module \BranchKillableQueue_2..
+Finding unused cells or wires in module \BranchKillableQueue..
+Finding unused cells or wires in module \BranchDecode..
+Finding unused cells or wires in module \BoomWritebackUnit..
+Finding unused cells or wires in module \BoomTile..
+Finding unused cells or wires in module \BoomProbeUnit..
+Finding unused cells or wires in module \BoomNonBlockingDCache..
+Finding unused cells or wires in module \BoomMSHRFile..
+Finding unused cells or wires in module \BoomMSHR..
+Finding unused cells or wires in module \BoomIOMSHR..
+Finding unused cells or wires in module \BoomFrontend..
+Finding unused cells or wires in module \BoomDuplicatedDataArray..
+Finding unused cells or wires in module \BoomCore..
+Finding unused cells or wires in module \BasicDispatcher..
+Finding unused cells or wires in module \Arbiter_8..
+Finding unused cells or wires in module \Arbiter_7..
+Finding unused cells or wires in module \Arbiter_6..
+Finding unused cells or wires in module \Arbiter_5..
+Finding unused cells or wires in module \Arbiter_4..
+Finding unused cells or wires in module \Arbiter_3..
+Finding unused cells or wires in module \Arbiter_2..
+Finding unused cells or wires in module \Arbiter_18..
+Finding unused cells or wires in module \Arbiter_17..
+Finding unused cells or wires in module \Arbiter_16..
+Finding unused cells or wires in module \Arbiter_14..
+Finding unused cells or wires in module \Arbiter_12..
+Finding unused cells or wires in module \Arbiter_10..
+Finding unused cells or wires in module \Arbiter_1..
+Finding unused cells or wires in module \Arbiter..
+Finding unused cells or wires in module \AMOALU..
+Finding unused cells or wires in module \ALUUnit_1..
+Finding unused cells or wires in module \ALUUnit..
+Finding unused cells or wires in module \ALUExeUnit_2..
+Finding unused cells or wires in module \ALUExeUnit_1..
+Finding unused cells or wires in module \ALUExeUnit..
+Finding unused cells or wires in module \ALU..
+Removed 59 unused cells and 59 unused wires.
+<suppressed ~65 debug messages>
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU..
+Finding unused cells or wires in module \ALUExeUnit..
+Finding unused cells or wires in module \ALUExeUnit_1..
+Finding unused cells or wires in module \ALUExeUnit_2..
+Finding unused cells or wires in module \ALUUnit..
+Finding unused cells or wires in module \ALUUnit_1..
+Finding unused cells or wires in module \AMOALU..
+Finding unused cells or wires in module \Arbiter..
+Finding unused cells or wires in module \Arbiter_1..
+Finding unused cells or wires in module \Arbiter_10..
+Finding unused cells or wires in module \Arbiter_12..
+Finding unused cells or wires in module \Arbiter_14..
+Finding unused cells or wires in module \Arbiter_16..
+Finding unused cells or wires in module \Arbiter_17..
+Finding unused cells or wires in module \Arbiter_18..
+Finding unused cells or wires in module \Arbiter_2..
+Finding unused cells or wires in module \Arbiter_3..
+Finding unused cells or wires in module \Arbiter_4..
+Finding unused cells or wires in module \Arbiter_5..
+Finding unused cells or wires in module \Arbiter_6..
+Finding unused cells or wires in module \Arbiter_7..
+Finding unused cells or wires in module \Arbiter_8..
+Finding unused cells or wires in module \BasicDispatcher..
+Finding unused cells or wires in module \BoomCore..
+Finding unused cells or wires in module \BoomDuplicatedDataArray..
+Finding unused cells or wires in module \BoomFrontend..
+Finding unused cells or wires in module \BoomIOMSHR..
+Finding unused cells or wires in module \BoomMSHR..
+Finding unused cells or wires in module \BoomMSHRFile..
+Finding unused cells or wires in module \BoomNonBlockingDCache..
+Finding unused cells or wires in module \BoomProbeUnit..
+Finding unused cells or wires in module \BoomTile..
+Finding unused cells or wires in module \BoomWritebackUnit..
+Finding unused cells or wires in module \BranchDecode..
+Finding unused cells or wires in module \BranchKillableQueue..
+Finding unused cells or wires in module \BranchKillableQueue_2..
+Finding unused cells or wires in module \BranchMaskGenerationLogic..
+Finding unused cells or wires in module \BundleBridgeNexus_6..
+Finding unused cells or wires in module \CSRFile..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \DecodeUnit..
+Finding unused cells or wires in module \DivUnit..
+Finding unused cells or wires in module \FetchBuffer..
+Finding unused cells or wires in module \FetchTargetQueue..
+Finding unused cells or wires in module \ForwardingAgeLogic..
+Finding unused cells or wires in module \HellaCacheArbiter..
+Finding unused cells or wires in module \ICache..
+Finding unused cells or wires in module \ITLB..
+Finding unused cells or wires in module \IntXbar_i4_o1..
+Finding unused cells or wires in module \IssueSlot..
+Finding unused cells or wires in module \IssueUnitCollapsing..
+Finding unused cells or wires in module \IssueUnitCollapsing_1..
+Finding unused cells or wires in module \L1MetadataArray..
+Finding unused cells or wires in module \LSU..
+Finding unused cells or wires in module \MemAddrCalcUnit..
+Finding unused cells or wires in module \MulDiv..
+Finding unused cells or wires in module \NBDTLB..
+Finding unused cells or wires in module \OptimizationBarrier_EntryData..
+Finding unused cells or wires in module \OptimizationBarrier_PTE..
+Finding unused cells or wires in module \OptimizationBarrier_TLBEntryData..
+Finding unused cells or wires in module \OptimizationBarrier_UInt..
+Finding unused cells or wires in module \PMAChecker..
+Finding unused cells or wires in module \PTW..
+Finding unused cells or wires in module \PipelinedMulUnit..
+Finding unused cells or wires in module \PipelinedMultiplier..
+Finding unused cells or wires in module \Queue_40..
+Finding unused cells or wires in module \Queue_41..
+Finding unused cells or wires in module \Queue_43..
+Finding unused cells or wires in module \RVCExpander..
+Finding unused cells or wires in module \RegisterFileSynthesizable..
+Finding unused cells or wires in module \RegisterRead..
+Finding unused cells or wires in module \RegisterReadDecode..
+Finding unused cells or wires in module \RegisterReadDecode_1..
+Finding unused cells or wires in module \RegisterReadDecode_2..
+Finding unused cells or wires in module \RenameBusyTable..
+Finding unused cells or wires in module \RenameFreeList..
+Finding unused cells or wires in module \RenameMapTable..
+Finding unused cells or wires in module \RenameStage..
+Finding unused cells or wires in module \Rob..
+Finding unused cells or wires in module \TLWidthWidget8_2..
+Finding unused cells or wires in module \TLWidthWidget8_7..
+Finding unused cells or wires in module \TLWidthWidget8_8..
+Finding unused cells or wires in module \TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c..
+Removed 46 unused cells and 46 unused wires.
+<suppressed ~91 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module ALU...
+Checking module ALUExeUnit...
+Checking module ALUExeUnit_1...
+Checking module ALUExeUnit_2...
+Checking module ALUUnit...
+Checking module ALUUnit_1...
+Checking module AMOALU...
+Checking module Arbiter...
+Checking module Arbiter_1...
+Checking module Arbiter_10...
+Checking module Arbiter_12...
+Checking module Arbiter_14...
+Checking module Arbiter_16...
+Checking module Arbiter_17...
+Checking module Arbiter_18...
+Checking module Arbiter_2...
+Checking module Arbiter_3...
+Checking module Arbiter_4...
+Checking module Arbiter_5...
+Checking module Arbiter_6...
+Checking module Arbiter_7...
+Checking module Arbiter_8...
+Checking module BasicDispatcher...
+Checking module BoomCore...
+Checking module BoomDuplicatedDataArray...
+Checking module BoomFrontend...
+Checking module BoomIOMSHR...
+Checking module BoomMSHR...
+Checking module BoomMSHRFile...
+Checking module BoomNonBlockingDCache...
+Checking module BoomProbeUnit...
+Checking module BoomTile...
+Checking module BoomWritebackUnit...
+Checking module BranchDecode...
+Checking module BranchKillableQueue...
+Checking module BranchKillableQueue_2...
+Checking module BranchMaskGenerationLogic...
+Checking module BundleBridgeNexus_6...
+Checking module CSRFile...
+Checking module Core...
+Checking module DecodeUnit...
+Checking module DivUnit...
+Checking module FetchBuffer...
+Checking module FetchTargetQueue...
+Checking module ForwardingAgeLogic...
+Checking module HellaCacheArbiter...
+Checking module ICache...
+Checking module ITLB...
+Checking module IntXbar_i4_o1...
+Checking module IssueSlot...
+Checking module IssueUnitCollapsing...
+Checking module IssueUnitCollapsing_1...
+Checking module L1MetadataArray...
+Checking module LSU...
+Checking module MemAddrCalcUnit...
+Checking module MulDiv...
+Checking module NBDTLB...
+Checking module OptimizationBarrier_EntryData...
+Checking module OptimizationBarrier_PTE...
+Checking module OptimizationBarrier_TLBEntryData...
+Checking module OptimizationBarrier_UInt...
+Checking module PMAChecker...
+Checking module PTW...
+Checking module PipelinedMulUnit...
+Checking module PipelinedMultiplier...
+Checking module Queue_40...
+Checking module Queue_41...
+Checking module Queue_43...
+Checking module RVCExpander...
+Checking module RegisterFileSynthesizable...
+Checking module RegisterRead...
+Checking module RegisterReadDecode...
+Checking module RegisterReadDecode_1...
+Checking module RegisterReadDecode_2...
+Checking module RenameBusyTable...
+Checking module RenameFreeList...
+Checking module RenameMapTable...
+Checking module RenameStage...
+Checking module Rob...
+Checking module TLWidthWidget8_2...
+Checking module TLWidthWidget8_7...
+Checking module TLWidthWidget8_8...
+Checking module TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU.
+Optimizing module ALUExeUnit.
+Optimizing module ALUExeUnit_1.
+Optimizing module ALUExeUnit_2.
+Optimizing module ALUUnit.
+Optimizing module ALUUnit_1.
+Optimizing module AMOALU.
+Optimizing module Arbiter.
+Optimizing module Arbiter_1.
+Optimizing module Arbiter_10.
+Optimizing module Arbiter_12.
+Optimizing module Arbiter_14.
+Optimizing module Arbiter_16.
+Optimizing module Arbiter_17.
+Optimizing module Arbiter_18.
+Optimizing module Arbiter_2.
+Optimizing module Arbiter_3.
+Optimizing module Arbiter_4.
+Optimizing module Arbiter_5.
+Optimizing module Arbiter_6.
+Optimizing module Arbiter_7.
+Optimizing module Arbiter_8.
+Optimizing module BasicDispatcher.
+Optimizing module BoomCore.
+Optimizing module BoomDuplicatedDataArray.
+Optimizing module BoomFrontend.
+<suppressed ~3 debug messages>
+Optimizing module BoomIOMSHR.
+Optimizing module BoomMSHR.
+Optimizing module BoomMSHRFile.
+Optimizing module BoomNonBlockingDCache.
+Optimizing module BoomProbeUnit.
+Optimizing module BoomTile.
+Optimizing module BoomWritebackUnit.
+Optimizing module BranchDecode.
+Optimizing module BranchKillableQueue.
+Optimizing module BranchKillableQueue_2.
+Optimizing module BranchMaskGenerationLogic.
+Optimizing module BundleBridgeNexus_6.
+Optimizing module CSRFile.
+Optimizing module Core.
+Optimizing module DecodeUnit.
+Optimizing module DivUnit.
+Optimizing module FetchBuffer.
+Optimizing module FetchTargetQueue.
+Optimizing module ForwardingAgeLogic.
+Optimizing module HellaCacheArbiter.
+Optimizing module ICache.
+Optimizing module ITLB.
+Optimizing module IntXbar_i4_o1.
+Optimizing module IssueSlot.
+Optimizing module IssueUnitCollapsing.
+Optimizing module IssueUnitCollapsing_1.
+Optimizing module L1MetadataArray.
+Optimizing module LSU.
+<suppressed ~1 debug messages>
+Optimizing module MemAddrCalcUnit.
+Optimizing module MulDiv.
+Optimizing module NBDTLB.
+Optimizing module OptimizationBarrier_EntryData.
+Optimizing module OptimizationBarrier_PTE.
+Optimizing module OptimizationBarrier_TLBEntryData.
+Optimizing module OptimizationBarrier_UInt.
+Optimizing module PMAChecker.
+Optimizing module PTW.
+Optimizing module PipelinedMulUnit.
+Optimizing module PipelinedMultiplier.
+Optimizing module Queue_40.
+Optimizing module Queue_41.
+Optimizing module Queue_43.
+Optimizing module RVCExpander.
+Optimizing module RegisterFileSynthesizable.
+Optimizing module RegisterRead.
+Optimizing module RegisterReadDecode.
+Optimizing module RegisterReadDecode_1.
+Optimizing module RegisterReadDecode_2.
+Optimizing module RenameBusyTable.
+Optimizing module RenameFreeList.
+Optimizing module RenameMapTable.
+Optimizing module RenameStage.
+Optimizing module Rob.
+Optimizing module TLWidthWidget8_2.
+Optimizing module TLWidthWidget8_7.
+Optimizing module TLWidthWidget8_8.
+Optimizing module TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU'.
+Finding identical cells in module `\ALUExeUnit'.
+Finding identical cells in module `\ALUExeUnit_1'.
+Finding identical cells in module `\ALUExeUnit_2'.
+Finding identical cells in module `\ALUUnit'.
+Finding identical cells in module `\ALUUnit_1'.
+Finding identical cells in module `\AMOALU'.
+Finding identical cells in module `\Arbiter'.
+Finding identical cells in module `\Arbiter_1'.
+Finding identical cells in module `\Arbiter_10'.
+Finding identical cells in module `\Arbiter_12'.
+Finding identical cells in module `\Arbiter_14'.
+Finding identical cells in module `\Arbiter_16'.
+Finding identical cells in module `\Arbiter_17'.
+Finding identical cells in module `\Arbiter_18'.
+Finding identical cells in module `\Arbiter_2'.
+Finding identical cells in module `\Arbiter_3'.
+Finding identical cells in module `\Arbiter_4'.
+Finding identical cells in module `\Arbiter_5'.
+Finding identical cells in module `\Arbiter_6'.
+Finding identical cells in module `\Arbiter_7'.
+Finding identical cells in module `\Arbiter_8'.
+Finding identical cells in module `\BasicDispatcher'.
+Finding identical cells in module `\BoomCore'.
+Finding identical cells in module `\BoomDuplicatedDataArray'.
+Finding identical cells in module `\BoomFrontend'.
+Finding identical cells in module `\BoomIOMSHR'.
+Finding identical cells in module `\BoomMSHR'.
+Finding identical cells in module `\BoomMSHRFile'.
+<suppressed ~9 debug messages>
+Finding identical cells in module `\BoomNonBlockingDCache'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\BoomProbeUnit'.
+Finding identical cells in module `\BoomTile'.
+Finding identical cells in module `\BoomWritebackUnit'.
+Finding identical cells in module `\BranchDecode'.
+Finding identical cells in module `\BranchKillableQueue'.
+Finding identical cells in module `\BranchKillableQueue_2'.
+Finding identical cells in module `\BranchMaskGenerationLogic'.
+Finding identical cells in module `\BundleBridgeNexus_6'.
+Finding identical cells in module `\CSRFile'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\DecodeUnit'.
+Finding identical cells in module `\DivUnit'.
+Finding identical cells in module `\FetchBuffer'.
+Finding identical cells in module `\FetchTargetQueue'.
+Finding identical cells in module `\ForwardingAgeLogic'.
+Finding identical cells in module `\HellaCacheArbiter'.
+Finding identical cells in module `\ICache'.
+Finding identical cells in module `\ITLB'.
+Finding identical cells in module `\IntXbar_i4_o1'.
+Finding identical cells in module `\IssueSlot'.
+Finding identical cells in module `\IssueUnitCollapsing'.
+Finding identical cells in module `\IssueUnitCollapsing_1'.
+Finding identical cells in module `\L1MetadataArray'.
+Finding identical cells in module `\LSU'.
+Finding identical cells in module `\MemAddrCalcUnit'.
+Finding identical cells in module `\MulDiv'.
+Finding identical cells in module `\NBDTLB'.
+Finding identical cells in module `\OptimizationBarrier_EntryData'.
+Finding identical cells in module `\OptimizationBarrier_PTE'.
+Finding identical cells in module `\OptimizationBarrier_TLBEntryData'.
+Finding identical cells in module `\OptimizationBarrier_UInt'.
+Finding identical cells in module `\PMAChecker'.
+Finding identical cells in module `\PTW'.
+Finding identical cells in module `\PipelinedMulUnit'.
+Finding identical cells in module `\PipelinedMultiplier'.
+Finding identical cells in module `\Queue_40'.
+Finding identical cells in module `\Queue_41'.
+Finding identical cells in module `\Queue_43'.
+Finding identical cells in module `\RVCExpander'.
+Finding identical cells in module `\RegisterFileSynthesizable'.
+Finding identical cells in module `\RegisterRead'.
+Finding identical cells in module `\RegisterReadDecode'.
+Finding identical cells in module `\RegisterReadDecode_1'.
+Finding identical cells in module `\RegisterReadDecode_2'.
+Finding identical cells in module `\RenameBusyTable'.
+Finding identical cells in module `\RenameFreeList'.
+Finding identical cells in module `\RenameMapTable'.
+Finding identical cells in module `\RenameStage'.
+Finding identical cells in module `\Rob'.
+Finding identical cells in module `\TLWidthWidget8_2'.
+Finding identical cells in module `\TLWidthWidget8_7'.
+Finding identical cells in module `\TLWidthWidget8_8'.
+Finding identical cells in module `\TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c'.
+<suppressed ~6 debug messages>
+Removed a total of 8 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 1-bit at position 0 on $auto$async2sync.cc:112:execute$111444 ($ff) from module CSRFile.
+Setting constant 1-bit at position 0 on $auto$async2sync.cc:112:execute$111414 ($ff) from module PTW.
+Setting constant 1-bit at position 0 on $auto$async2sync.cc:112:execute$111390 ($ff) from module TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c.
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU..
+Finding unused cells or wires in module \ALUExeUnit..
+Finding unused cells or wires in module \ALUExeUnit_1..
+Finding unused cells or wires in module \ALUExeUnit_2..
+Finding unused cells or wires in module \ALUUnit..
+Finding unused cells or wires in module \ALUUnit_1..
+Finding unused cells or wires in module \AMOALU..
+Finding unused cells or wires in module \Arbiter..
+Finding unused cells or wires in module \Arbiter_1..
+Finding unused cells or wires in module \Arbiter_10..
+Finding unused cells or wires in module \Arbiter_12..
+Finding unused cells or wires in module \Arbiter_14..
+Finding unused cells or wires in module \Arbiter_16..
+Finding unused cells or wires in module \Arbiter_17..
+Finding unused cells or wires in module \Arbiter_18..
+Finding unused cells or wires in module \Arbiter_2..
+Finding unused cells or wires in module \Arbiter_3..
+Finding unused cells or wires in module \Arbiter_4..
+Finding unused cells or wires in module \Arbiter_5..
+Finding unused cells or wires in module \Arbiter_6..
+Finding unused cells or wires in module \Arbiter_7..
+Finding unused cells or wires in module \Arbiter_8..
+Finding unused cells or wires in module \BasicDispatcher..
+Finding unused cells or wires in module \BoomCore..
+Finding unused cells or wires in module \BoomDuplicatedDataArray..
+Finding unused cells or wires in module \BoomFrontend..
+Finding unused cells or wires in module \BoomIOMSHR..
+Finding unused cells or wires in module \BoomMSHR..
+Finding unused cells or wires in module \BoomMSHRFile..
+Finding unused cells or wires in module \BoomNonBlockingDCache..
+Finding unused cells or wires in module \BoomProbeUnit..
+Finding unused cells or wires in module \BoomTile..
+Finding unused cells or wires in module \BoomWritebackUnit..
+Finding unused cells or wires in module \BranchDecode..
+Finding unused cells or wires in module \BranchKillableQueue..
+Finding unused cells or wires in module \BranchKillableQueue_2..
+Finding unused cells or wires in module \BranchMaskGenerationLogic..
+Finding unused cells or wires in module \BundleBridgeNexus_6..
+Finding unused cells or wires in module \CSRFile..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \DecodeUnit..
+Finding unused cells or wires in module \DivUnit..
+Finding unused cells or wires in module \FetchBuffer..
+Finding unused cells or wires in module \FetchTargetQueue..
+Finding unused cells or wires in module \ForwardingAgeLogic..
+Finding unused cells or wires in module \HellaCacheArbiter..
+Finding unused cells or wires in module \ICache..
+Finding unused cells or wires in module \ITLB..
+Finding unused cells or wires in module \IntXbar_i4_o1..
+Finding unused cells or wires in module \IssueSlot..
+Finding unused cells or wires in module \IssueUnitCollapsing..
+Finding unused cells or wires in module \IssueUnitCollapsing_1..
+Finding unused cells or wires in module \L1MetadataArray..
+Finding unused cells or wires in module \LSU..
+Finding unused cells or wires in module \MemAddrCalcUnit..
+Finding unused cells or wires in module \MulDiv..
+Finding unused cells or wires in module \NBDTLB..
+Finding unused cells or wires in module \OptimizationBarrier_EntryData..
+Finding unused cells or wires in module \OptimizationBarrier_PTE..
+Finding unused cells or wires in module \OptimizationBarrier_TLBEntryData..
+Finding unused cells or wires in module \OptimizationBarrier_UInt..
+Finding unused cells or wires in module \PMAChecker..
+Finding unused cells or wires in module \PTW..
+Finding unused cells or wires in module \PipelinedMulUnit..
+Finding unused cells or wires in module \PipelinedMultiplier..
+Finding unused cells or wires in module \Queue_40..
+Finding unused cells or wires in module \Queue_41..
+Finding unused cells or wires in module \Queue_43..
+Finding unused cells or wires in module \RVCExpander..
+Finding unused cells or wires in module \RegisterFileSynthesizable..
+Finding unused cells or wires in module \RegisterRead..
+Finding unused cells or wires in module \RegisterReadDecode..
+Finding unused cells or wires in module \RegisterReadDecode_1..
+Finding unused cells or wires in module \RegisterReadDecode_2..
+Finding unused cells or wires in module \RenameBusyTable..
+Finding unused cells or wires in module \RenameFreeList..
+Finding unused cells or wires in module \RenameMapTable..
+Finding unused cells or wires in module \RenameStage..
+Finding unused cells or wires in module \Rob..
+Finding unused cells or wires in module \TLWidthWidget8_2..
+Finding unused cells or wires in module \TLWidthWidget8_7..
+Finding unused cells or wires in module \TLWidthWidget8_8..
+Finding unused cells or wires in module \TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c..
+Removed 1314 unused cells and 1325 unused wires.
+<suppressed ~1345 debug messages>
+
+11.5. Rerunning OPT passes. (Removed registers in this run.)
+
+11.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU.
+Optimizing module ALUExeUnit.
+Optimizing module ALUExeUnit_1.
+Optimizing module ALUExeUnit_2.
+Optimizing module ALUUnit.
+Optimizing module ALUUnit_1.
+Optimizing module AMOALU.
+Optimizing module Arbiter.
+Optimizing module Arbiter_1.
+Optimizing module Arbiter_10.
+Optimizing module Arbiter_12.
+Optimizing module Arbiter_14.
+Optimizing module Arbiter_16.
+Optimizing module Arbiter_17.
+Optimizing module Arbiter_18.
+Optimizing module Arbiter_2.
+Optimizing module Arbiter_3.
+Optimizing module Arbiter_4.
+Optimizing module Arbiter_5.
+Optimizing module Arbiter_6.
+Optimizing module Arbiter_7.
+Optimizing module Arbiter_8.
+Optimizing module BasicDispatcher.
+Optimizing module BoomCore.
+Optimizing module BoomDuplicatedDataArray.
+Optimizing module BoomFrontend.
+Optimizing module BoomIOMSHR.
+Optimizing module BoomMSHR.
+Optimizing module BoomMSHRFile.
+Optimizing module BoomNonBlockingDCache.
+Optimizing module BoomProbeUnit.
+Optimizing module BoomTile.
+Optimizing module BoomWritebackUnit.
+Optimizing module BranchDecode.
+Optimizing module BranchKillableQueue.
+Optimizing module BranchKillableQueue_2.
+Optimizing module BranchMaskGenerationLogic.
+Optimizing module BundleBridgeNexus_6.
+Optimizing module CSRFile.
+Optimizing module Core.
+Optimizing module DecodeUnit.
+Optimizing module DivUnit.
+Optimizing module FetchBuffer.
+Optimizing module FetchTargetQueue.
+Optimizing module ForwardingAgeLogic.
+Optimizing module HellaCacheArbiter.
+Optimizing module ICache.
+Optimizing module ITLB.
+Optimizing module IntXbar_i4_o1.
+Optimizing module IssueSlot.
+Optimizing module IssueUnitCollapsing.
+Optimizing module IssueUnitCollapsing_1.
+Optimizing module L1MetadataArray.
+Optimizing module LSU.
+<suppressed ~1 debug messages>
+Optimizing module MemAddrCalcUnit.
+Optimizing module MulDiv.
+Optimizing module NBDTLB.
+Optimizing module OptimizationBarrier_EntryData.
+Optimizing module OptimizationBarrier_PTE.
+Optimizing module OptimizationBarrier_TLBEntryData.
+Optimizing module OptimizationBarrier_UInt.
+Optimizing module PMAChecker.
+Optimizing module PTW.
+Optimizing module PipelinedMulUnit.
+Optimizing module PipelinedMultiplier.
+Optimizing module Queue_40.
+Optimizing module Queue_41.
+Optimizing module Queue_43.
+Optimizing module RVCExpander.
+Optimizing module RegisterFileSynthesizable.
+Optimizing module RegisterRead.
+Optimizing module RegisterReadDecode.
+Optimizing module RegisterReadDecode_1.
+Optimizing module RegisterReadDecode_2.
+Optimizing module RenameBusyTable.
+Optimizing module RenameFreeList.
+Optimizing module RenameMapTable.
+Optimizing module RenameStage.
+Optimizing module Rob.
+Optimizing module TLWidthWidget8_2.
+Optimizing module TLWidthWidget8_7.
+Optimizing module TLWidthWidget8_8.
+Optimizing module TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c.
+
+11.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU'.
+Finding identical cells in module `\ALUExeUnit'.
+Finding identical cells in module `\ALUExeUnit_1'.
+Finding identical cells in module `\ALUExeUnit_2'.
+Finding identical cells in module `\ALUUnit'.
+Finding identical cells in module `\ALUUnit_1'.
+Finding identical cells in module `\AMOALU'.
+Finding identical cells in module `\Arbiter'.
+Finding identical cells in module `\Arbiter_1'.
+Finding identical cells in module `\Arbiter_10'.
+Finding identical cells in module `\Arbiter_12'.
+Finding identical cells in module `\Arbiter_14'.
+Finding identical cells in module `\Arbiter_16'.
+Finding identical cells in module `\Arbiter_17'.
+Finding identical cells in module `\Arbiter_18'.
+Finding identical cells in module `\Arbiter_2'.
+Finding identical cells in module `\Arbiter_3'.
+Finding identical cells in module `\Arbiter_4'.
+Finding identical cells in module `\Arbiter_5'.
+Finding identical cells in module `\Arbiter_6'.
+Finding identical cells in module `\Arbiter_7'.
+Finding identical cells in module `\Arbiter_8'.
+Finding identical cells in module `\BasicDispatcher'.
+Finding identical cells in module `\BoomCore'.
+Finding identical cells in module `\BoomDuplicatedDataArray'.
+Finding identical cells in module `\BoomFrontend'.
+Finding identical cells in module `\BoomIOMSHR'.
+Finding identical cells in module `\BoomMSHR'.
+Finding identical cells in module `\BoomMSHRFile'.
+Finding identical cells in module `\BoomNonBlockingDCache'.
+Finding identical cells in module `\BoomProbeUnit'.
+Finding identical cells in module `\BoomTile'.
+Finding identical cells in module `\BoomWritebackUnit'.
+Finding identical cells in module `\BranchDecode'.
+Finding identical cells in module `\BranchKillableQueue'.
+Finding identical cells in module `\BranchKillableQueue_2'.
+Finding identical cells in module `\BranchMaskGenerationLogic'.
+Finding identical cells in module `\BundleBridgeNexus_6'.
+Finding identical cells in module `\CSRFile'.
+Finding identical cells in module `\Core'.
+Finding identical cells in module `\DecodeUnit'.
+Finding identical cells in module `\DivUnit'.
+Finding identical cells in module `\FetchBuffer'.
+Finding identical cells in module `\FetchTargetQueue'.
+Finding identical cells in module `\ForwardingAgeLogic'.
+Finding identical cells in module `\HellaCacheArbiter'.
+Finding identical cells in module `\ICache'.
+Finding identical cells in module `\ITLB'.
+Finding identical cells in module `\IntXbar_i4_o1'.
+Finding identical cells in module `\IssueSlot'.
+Finding identical cells in module `\IssueUnitCollapsing'.
+Finding identical cells in module `\IssueUnitCollapsing_1'.
+Finding identical cells in module `\L1MetadataArray'.
+Finding identical cells in module `\LSU'.
+Finding identical cells in module `\MemAddrCalcUnit'.
+Finding identical cells in module `\MulDiv'.
+Finding identical cells in module `\NBDTLB'.
+Finding identical cells in module `\OptimizationBarrier_EntryData'.
+Finding identical cells in module `\OptimizationBarrier_PTE'.
+Finding identical cells in module `\OptimizationBarrier_TLBEntryData'.
+Finding identical cells in module `\OptimizationBarrier_UInt'.
+Finding identical cells in module `\PMAChecker'.
+Finding identical cells in module `\PTW'.
+Finding identical cells in module `\PipelinedMulUnit'.
+Finding identical cells in module `\PipelinedMultiplier'.
+Finding identical cells in module `\Queue_40'.
+Finding identical cells in module `\Queue_41'.
+Finding identical cells in module `\Queue_43'.
+Finding identical cells in module `\RVCExpander'.
+Finding identical cells in module `\RegisterFileSynthesizable'.
+Finding identical cells in module `\RegisterRead'.
+Finding identical cells in module `\RegisterReadDecode'.
+Finding identical cells in module `\RegisterReadDecode_1'.
+Finding identical cells in module `\RegisterReadDecode_2'.
+Finding identical cells in module `\RenameBusyTable'.
+Finding identical cells in module `\RenameFreeList'.
+Finding identical cells in module `\RenameMapTable'.
+Finding identical cells in module `\RenameStage'.
+Finding identical cells in module `\Rob'.
+Finding identical cells in module `\TLWidthWidget8_2'.
+Finding identical cells in module `\TLWidthWidget8_7'.
+Finding identical cells in module `\TLWidthWidget8_8'.
+Finding identical cells in module `\TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c'.
+Removed a total of 0 cells.
+
+11.8. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU..
+Finding unused cells or wires in module \ALUExeUnit..
+Finding unused cells or wires in module \ALUExeUnit_1..
+Finding unused cells or wires in module \ALUExeUnit_2..
+Finding unused cells or wires in module \ALUUnit..
+Finding unused cells or wires in module \ALUUnit_1..
+Finding unused cells or wires in module \AMOALU..
+Finding unused cells or wires in module \Arbiter..
+Finding unused cells or wires in module \Arbiter_1..
+Finding unused cells or wires in module \Arbiter_10..
+Finding unused cells or wires in module \Arbiter_12..
+Finding unused cells or wires in module \Arbiter_14..
+Finding unused cells or wires in module \Arbiter_16..
+Finding unused cells or wires in module \Arbiter_17..
+Finding unused cells or wires in module \Arbiter_18..
+Finding unused cells or wires in module \Arbiter_2..
+Finding unused cells or wires in module \Arbiter_3..
+Finding unused cells or wires in module \Arbiter_4..
+Finding unused cells or wires in module \Arbiter_5..
+Finding unused cells or wires in module \Arbiter_6..
+Finding unused cells or wires in module \Arbiter_7..
+Finding unused cells or wires in module \Arbiter_8..
+Finding unused cells or wires in module \BasicDispatcher..
+Finding unused cells or wires in module \BoomCore..
+Finding unused cells or wires in module \BoomDuplicatedDataArray..
+Finding unused cells or wires in module \BoomFrontend..
+Finding unused cells or wires in module \BoomIOMSHR..
+Finding unused cells or wires in module \BoomMSHR..
+Finding unused cells or wires in module \BoomMSHRFile..
+Finding unused cells or wires in module \BoomNonBlockingDCache..
+Finding unused cells or wires in module \BoomProbeUnit..
+Finding unused cells or wires in module \BoomTile..
+Finding unused cells or wires in module \BoomWritebackUnit..
+Finding unused cells or wires in module \BranchDecode..
+Finding unused cells or wires in module \BranchKillableQueue..
+Finding unused cells or wires in module \BranchKillableQueue_2..
+Finding unused cells or wires in module \BranchMaskGenerationLogic..
+Finding unused cells or wires in module \BundleBridgeNexus_6..
+Finding unused cells or wires in module \CSRFile..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \DecodeUnit..
+Finding unused cells or wires in module \DivUnit..
+Finding unused cells or wires in module \FetchBuffer..
+Finding unused cells or wires in module \FetchTargetQueue..
+Finding unused cells or wires in module \ForwardingAgeLogic..
+Finding unused cells or wires in module \HellaCacheArbiter..
+Finding unused cells or wires in module \ICache..
+Finding unused cells or wires in module \ITLB..
+Finding unused cells or wires in module \IntXbar_i4_o1..
+Finding unused cells or wires in module \IssueSlot..
+Finding unused cells or wires in module \IssueUnitCollapsing..
+Finding unused cells or wires in module \IssueUnitCollapsing_1..
+Finding unused cells or wires in module \L1MetadataArray..
+Finding unused cells or wires in module \LSU..
+Finding unused cells or wires in module \MemAddrCalcUnit..
+Finding unused cells or wires in module \MulDiv..
+Finding unused cells or wires in module \NBDTLB..
+Finding unused cells or wires in module \OptimizationBarrier_EntryData..
+Finding unused cells or wires in module \OptimizationBarrier_PTE..
+Finding unused cells or wires in module \OptimizationBarrier_TLBEntryData..
+Finding unused cells or wires in module \OptimizationBarrier_UInt..
+Finding unused cells or wires in module \PMAChecker..
+Finding unused cells or wires in module \PTW..
+Finding unused cells or wires in module \PipelinedMulUnit..
+Finding unused cells or wires in module \PipelinedMultiplier..
+Finding unused cells or wires in module \Queue_40..
+Finding unused cells or wires in module \Queue_41..
+Finding unused cells or wires in module \Queue_43..
+Finding unused cells or wires in module \RVCExpander..
+Finding unused cells or wires in module \RegisterFileSynthesizable..
+Finding unused cells or wires in module \RegisterRead..
+Finding unused cells or wires in module \RegisterReadDecode..
+Finding unused cells or wires in module \RegisterReadDecode_1..
+Finding unused cells or wires in module \RegisterReadDecode_2..
+Finding unused cells or wires in module \RenameBusyTable..
+Finding unused cells or wires in module \RenameFreeList..
+Finding unused cells or wires in module \RenameMapTable..
+Finding unused cells or wires in module \RenameStage..
+Finding unused cells or wires in module \Rob..
+Finding unused cells or wires in module \TLWidthWidget8_2..
+Finding unused cells or wires in module \TLWidthWidget8_7..
+Finding unused cells or wires in module \TLWidthWidget8_8..
+Finding unused cells or wires in module \TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+11.10. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU..
+Finding unused cells or wires in module \ALUExeUnit..
+Finding unused cells or wires in module \ALUExeUnit_1..
+Finding unused cells or wires in module \ALUExeUnit_2..
+Finding unused cells or wires in module \ALUUnit..
+Finding unused cells or wires in module \ALUUnit_1..
+Finding unused cells or wires in module \AMOALU..
+Finding unused cells or wires in module \Arbiter..
+Finding unused cells or wires in module \Arbiter_1..
+Finding unused cells or wires in module \Arbiter_10..
+Finding unused cells or wires in module \Arbiter_12..
+Finding unused cells or wires in module \Arbiter_14..
+Finding unused cells or wires in module \Arbiter_16..
+Finding unused cells or wires in module \Arbiter_17..
+Finding unused cells or wires in module \Arbiter_18..
+Finding unused cells or wires in module \Arbiter_2..
+Finding unused cells or wires in module \Arbiter_3..
+Finding unused cells or wires in module \Arbiter_4..
+Finding unused cells or wires in module \Arbiter_5..
+Finding unused cells or wires in module \Arbiter_6..
+Finding unused cells or wires in module \Arbiter_7..
+Finding unused cells or wires in module \Arbiter_8..
+Finding unused cells or wires in module \BasicDispatcher..
+Finding unused cells or wires in module \BoomCore..
+Finding unused cells or wires in module \BoomDuplicatedDataArray..
+Finding unused cells or wires in module \BoomFrontend..
+Finding unused cells or wires in module \BoomIOMSHR..
+Finding unused cells or wires in module \BoomMSHR..
+Finding unused cells or wires in module \BoomMSHRFile..
+Finding unused cells or wires in module \BoomNonBlockingDCache..
+Finding unused cells or wires in module \BoomProbeUnit..
+Finding unused cells or wires in module \BoomTile..
+Finding unused cells or wires in module \BoomWritebackUnit..
+Finding unused cells or wires in module \BranchDecode..
+Finding unused cells or wires in module \BranchKillableQueue..
+Finding unused cells or wires in module \BranchKillableQueue_2..
+Finding unused cells or wires in module \BranchMaskGenerationLogic..
+Finding unused cells or wires in module \BundleBridgeNexus_6..
+Finding unused cells or wires in module \CSRFile..
+Finding unused cells or wires in module \Core..
+Finding unused cells or wires in module \DecodeUnit..
+Finding unused cells or wires in module \DivUnit..
+Finding unused cells or wires in module \FetchBuffer..
+Finding unused cells or wires in module \FetchTargetQueue..
+Finding unused cells or wires in module \ForwardingAgeLogic..
+Finding unused cells or wires in module \HellaCacheArbiter..
+Finding unused cells or wires in module \ICache..
+Finding unused cells or wires in module \ITLB..
+Finding unused cells or wires in module \IntXbar_i4_o1..
+Finding unused cells or wires in module \IssueSlot..
+Finding unused cells or wires in module \IssueUnitCollapsing..
+Finding unused cells or wires in module \IssueUnitCollapsing_1..
+Finding unused cells or wires in module \L1MetadataArray..
+Finding unused cells or wires in module \LSU..
+Finding unused cells or wires in module \MemAddrCalcUnit..
+Finding unused cells or wires in module \MulDiv..
+Finding unused cells or wires in module \NBDTLB..
+Finding unused cells or wires in module \OptimizationBarrier_EntryData..
+Finding unused cells or wires in module \OptimizationBarrier_PTE..
+Finding unused cells or wires in module \OptimizationBarrier_TLBEntryData..
+Finding unused cells or wires in module \OptimizationBarrier_UInt..
+Finding unused cells or wires in module \PMAChecker..
+Finding unused cells or wires in module \PTW..
+Finding unused cells or wires in module \PipelinedMulUnit..
+Finding unused cells or wires in module \PipelinedMultiplier..
+Finding unused cells or wires in module \Queue_40..
+Finding unused cells or wires in module \Queue_41..
+Finding unused cells or wires in module \Queue_43..
+Finding unused cells or wires in module \RVCExpander..
+Finding unused cells or wires in module \RegisterFileSynthesizable..
+Finding unused cells or wires in module \RegisterRead..
+Finding unused cells or wires in module \RegisterReadDecode..
+Finding unused cells or wires in module \RegisterReadDecode_1..
+Finding unused cells or wires in module \RegisterReadDecode_2..
+Finding unused cells or wires in module \RenameBusyTable..
+Finding unused cells or wires in module \RenameFreeList..
+Finding unused cells or wires in module \RenameMapTable..
+Finding unused cells or wires in module \RenameStage..
+Finding unused cells or wires in module \Rob..
+Finding unused cells or wires in module \TLWidthWidget8_2..
+Finding unused cells or wires in module \TLWidthWidget8_7..
+Finding unused cells or wires in module \TLWidthWidget8_8..
+Finding unused cells or wires in module \TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c..
+Removed 0 unused cells and 77 unused wires.
+<suppressed ~14 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: 0ad7a2517e, CPU: user 14.27s system 0.13s, MEM: 258.87 MB peak
+Yosys 0.50+56 (git sha1 78960292d, clang++ 18.1.8 -fPIC -O3)
+Time spent: 43% 5x opt_clean (5 sec), 18% 2x opt_dff (2 sec), ...

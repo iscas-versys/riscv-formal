@@ -1,0 +1,2 @@
+start: 19:44:45 end: 8:06:09 channel0 12h21min24s 44484s
+start: 19:44:45 end: 8:41:56 channel1 12h57min11s 46631s

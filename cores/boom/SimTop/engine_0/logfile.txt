@@ -1,0 +1,3 @@
+line 88183: bit width must be greater than 0
+error
+b0

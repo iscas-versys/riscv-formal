@@ -3,7 +3,7 @@ mode bmc
 depth 30
 
 [engines]
-smtbmc bitwuzla
+btor pono
 
 [script]
 read_verilog -sv Core.v

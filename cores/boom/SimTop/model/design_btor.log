@@ -1,0 +1,1641 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.50+56 (git sha1 78960292d, clang++ 18.1.8 -fPIC -O3)
+
+-- Executing script file `design_btor.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `Core'. Setting top module to Core.
+
+2.1. Analyzing design hierarchy..
+Top module:  \Core
+Used module:     \BoomTile
+Used module:         \TLWidthWidget8_8
+Used module:         \TLWidthWidget8_7
+Used module:         \TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c
+Used module:         \PTW
+Used module:             \OptimizationBarrier_UInt
+Used module:             \OptimizationBarrier_PTE
+Used module:             \Arbiter_18
+Used module:         \LSU
+Used module:             \ForwardingAgeLogic
+Used module:             \NBDTLB
+Used module:                 \OptimizationBarrier_EntryData
+Used module:         \IntXbar_i4_o1
+Used module:         \HellaCacheArbiter
+Used module:         \BoomFrontend
+Used module:             \ITLB
+Used module:                 \PMAChecker
+Used module:                 \OptimizationBarrier_TLBEntryData
+Used module:             \ICache
+Used module:             \FetchTargetQueue
+Used module:             \FetchBuffer
+Used module:             \Queue_43
+Used module:             \Queue_41
+Used module:             \Queue_40
+Used module:             \RVCExpander
+Used module:             \BranchDecode
+Used module:         \BoomNonBlockingDCache
+Used module:             \Arbiter_4
+Used module:             \BoomWritebackUnit
+Used module:             \BoomProbeUnit
+Used module:             \BoomMSHRFile
+Used module:                 \BranchKillableQueue_2
+Used module:                 \Arbiter_6
+Used module:                 \Arbiter_5
+Used module:                 \Arbiter_7
+Used module:                 \BoomMSHR
+Used module:                     \BranchKillableQueue
+Used module:                 \BoomIOMSHR
+Used module:                 \Arbiter_8
+Used module:                 \Arbiter_2
+Used module:                 \Arbiter_3
+Used module:                 \Arbiter_1
+Used module:                 \Arbiter
+Used module:             \L1MetadataArray
+Used module:             \Arbiter_10
+Used module:             \Arbiter_14
+Used module:             \Arbiter_12
+Used module:             \BoomDuplicatedDataArray
+Used module:             \AMOALU
+Used module:         \BoomCore
+Used module:             \Rob
+Used module:             \RenameStage
+Used module:                 \RenameMapTable
+Used module:                 \RenameFreeList
+Used module:                 \RenameBusyTable
+Used module:             \IssueUnitCollapsing
+Used module:                 \IssueSlot
+Used module:             \ALUExeUnit
+Used module:                 \MemAddrCalcUnit
+Used module:             \Arbiter_16
+Used module:             \RegisterRead
+Used module:                 \RegisterReadDecode_2
+Used module:                 \RegisterReadDecode_1
+Used module:                 \RegisterReadDecode
+Used module:             \RegisterFileSynthesizable
+Used module:             \IssueUnitCollapsing_1
+Used module:             \Arbiter_17
+Used module:             \BasicDispatcher
+Used module:             \DecodeUnit
+Used module:             \BranchMaskGenerationLogic
+Used module:             \CSRFile
+Used module:             \ALUExeUnit_2
+Used module:                 \DivUnit
+Used module:                     \MulDiv
+Used module:                 \ALUUnit_1
+Used module:                     \ALU
+Used module:             \ALUExeUnit_1
+Used module:                 \PipelinedMulUnit
+Used module:                     \PipelinedMultiplier
+Used module:                 \ALUUnit
+Used module:         \TLWidthWidget8_2
+Used module:         \BundleBridgeNexus_6
+
+2.2. Analyzing design hierarchy..
+Top module:  \Core
+Used module:     \BoomTile
+Used module:         \TLWidthWidget8_8
+Used module:         \TLWidthWidget8_7
+Used module:         \TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c
+Used module:         \PTW
+Used module:             \OptimizationBarrier_UInt
+Used module:             \OptimizationBarrier_PTE
+Used module:             \Arbiter_18
+Used module:         \LSU
+Used module:             \ForwardingAgeLogic
+Used module:             \NBDTLB
+Used module:                 \OptimizationBarrier_EntryData
+Used module:         \IntXbar_i4_o1
+Used module:         \HellaCacheArbiter
+Used module:         \BoomFrontend
+Used module:             \ITLB
+Used module:                 \PMAChecker
+Used module:                 \OptimizationBarrier_TLBEntryData
+Used module:             \ICache
+Used module:             \FetchTargetQueue
+Used module:             \FetchBuffer
+Used module:             \Queue_43
+Used module:             \Queue_41
+Used module:             \Queue_40
+Used module:             \RVCExpander
+Used module:             \BranchDecode
+Used module:         \BoomNonBlockingDCache
+Used module:             \Arbiter_4
+Used module:             \BoomWritebackUnit
+Used module:             \BoomProbeUnit
+Used module:             \BoomMSHRFile
+Used module:                 \BranchKillableQueue_2
+Used module:                 \Arbiter_6
+Used module:                 \Arbiter_5
+Used module:                 \Arbiter_7
+Used module:                 \BoomMSHR
+Used module:                     \BranchKillableQueue
+Used module:                 \BoomIOMSHR
+Used module:                 \Arbiter_8
+Used module:                 \Arbiter_2
+Used module:                 \Arbiter_3
+Used module:                 \Arbiter_1
+Used module:                 \Arbiter
+Used module:             \L1MetadataArray
+Used module:             \Arbiter_10
+Used module:             \Arbiter_14
+Used module:             \Arbiter_12
+Used module:             \BoomDuplicatedDataArray
+Used module:             \AMOALU
+Used module:         \BoomCore
+Used module:             \Rob
+Used module:             \RenameStage
+Used module:                 \RenameMapTable
+Used module:                 \RenameFreeList
+Used module:                 \RenameBusyTable
+Used module:             \IssueUnitCollapsing
+Used module:                 \IssueSlot
+Used module:             \ALUExeUnit
+Used module:                 \MemAddrCalcUnit
+Used module:             \Arbiter_16
+Used module:             \RegisterRead
+Used module:                 \RegisterReadDecode_2
+Used module:                 \RegisterReadDecode_1
+Used module:                 \RegisterReadDecode
+Used module:             \RegisterFileSynthesizable
+Used module:             \IssueUnitCollapsing_1
+Used module:             \Arbiter_17
+Used module:             \BasicDispatcher
+Used module:             \DecodeUnit
+Used module:             \BranchMaskGenerationLogic
+Used module:             \CSRFile
+Used module:             \ALUExeUnit_2
+Used module:                 \DivUnit
+Used module:                     \MulDiv
+Used module:                 \ALUUnit_1
+Used module:                     \ALU
+Used module:             \ALUExeUnit_1
+Used module:                 \PipelinedMulUnit
+Used module:                     \PipelinedMultiplier
+Used module:                 \ALUUnit
+Used module:         \TLWidthWidget8_2
+Used module:         \BundleBridgeNexus_6
+Removed 0 unused modules.
+Module TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c directly or indirectly contains formal properties -> setting "keep" attribute.
+Module PTW directly or indirectly contains formal properties -> setting "keep" attribute.
+Module ITLB directly or indirectly contains formal properties -> setting "keep" attribute.
+Module Core directly or indirectly contains formal properties -> setting "keep" attribute.
+Module CSRFile directly or indirectly contains formal properties -> setting "keep" attribute.
+Module BoomTile directly or indirectly contains formal properties -> setting "keep" attribute.
+Module BoomNonBlockingDCache directly or indirectly contains formal properties -> setting "keep" attribute.
+Module BoomMSHRFile directly or indirectly contains formal properties -> setting "keep" attribute.
+Module BoomFrontend directly or indirectly contains formal properties -> setting "keep" attribute.
+Module BoomCore directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing FLATTEN pass (flatten design).
+Deleting now unused module TLXbar_MasterXbar_BoomTile_i2_o1_a32d64s3k2z3c.
+Deleting now unused module TLWidthWidget8_8.
+Deleting now unused module TLWidthWidget8_7.
+Deleting now unused module TLWidthWidget8_2.
+Deleting now unused module Rob.
+Deleting now unused module RenameStage.
+Deleting now unused module RenameMapTable.
+Deleting now unused module RenameFreeList.
+Deleting now unused module RenameBusyTable.
+Deleting now unused module RegisterReadDecode_2.
+Deleting now unused module RegisterReadDecode_1.
+Deleting now unused module RegisterReadDecode.
+Deleting now unused module RegisterRead.
+Deleting now unused module RegisterFileSynthesizable.
+Deleting now unused module RVCExpander.
+Deleting now unused module Queue_43.
+Deleting now unused module Queue_41.
+Deleting now unused module Queue_40.
+Deleting now unused module PipelinedMultiplier.
+Deleting now unused module PipelinedMulUnit.
+Deleting now unused module PTW.
+Deleting now unused module PMAChecker.
+Deleting now unused module OptimizationBarrier_UInt.
+Deleting now unused module OptimizationBarrier_TLBEntryData.
+Deleting now unused module OptimizationBarrier_PTE.
+Deleting now unused module OptimizationBarrier_EntryData.
+Deleting now unused module NBDTLB.
+Deleting now unused module MulDiv.
+Deleting now unused module MemAddrCalcUnit.
+Deleting now unused module LSU.
+Deleting now unused module L1MetadataArray.
+Deleting now unused module IssueUnitCollapsing_1.
+Deleting now unused module IssueUnitCollapsing.
+Deleting now unused module IssueSlot.
+Deleting now unused module IntXbar_i4_o1.
+Deleting now unused module ITLB.
+Deleting now unused module ICache.
+Deleting now unused module HellaCacheArbiter.
+Deleting now unused module ForwardingAgeLogic.
+Deleting now unused module FetchTargetQueue.
+Deleting now unused module FetchBuffer.
+Deleting now unused module DivUnit.
+Deleting now unused module DecodeUnit.
+Deleting now unused module CSRFile.
+Deleting now unused module BundleBridgeNexus_6.
+Deleting now unused module BranchMaskGenerationLogic.
+Deleting now unused module BranchKillableQueue_2.
+Deleting now unused module BranchKillableQueue.
+Deleting now unused module BranchDecode.
+Deleting now unused module BoomWritebackUnit.
+Deleting now unused module BoomTile.
+Deleting now unused module BoomProbeUnit.
+Deleting now unused module BoomNonBlockingDCache.
+Deleting now unused module BoomMSHRFile.
+Deleting now unused module BoomMSHR.
+Deleting now unused module BoomIOMSHR.
+Deleting now unused module BoomFrontend.
+Deleting now unused module BoomDuplicatedDataArray.
+Deleting now unused module BoomCore.
+Deleting now unused module BasicDispatcher.
+Deleting now unused module Arbiter_8.
+Deleting now unused module Arbiter_7.
+Deleting now unused module Arbiter_6.
+Deleting now unused module Arbiter_5.
+Deleting now unused module Arbiter_4.
+Deleting now unused module Arbiter_3.
+Deleting now unused module Arbiter_2.
+Deleting now unused module Arbiter_18.
+Deleting now unused module Arbiter_17.
+Deleting now unused module Arbiter_16.
+Deleting now unused module Arbiter_14.
+Deleting now unused module Arbiter_12.
+Deleting now unused module Arbiter_10.
+Deleting now unused module Arbiter_1.
+Deleting now unused module Arbiter.
+Deleting now unused module AMOALU.
+Deleting now unused module ALUUnit_1.
+Deleting now unused module ALUUnit.
+Deleting now unused module ALUExeUnit_2.
+Deleting now unused module ALUExeUnit_1.
+Deleting now unused module ALUExeUnit.
+Deleting now unused module ALU.
+<suppressed ~150 debug messages>
+
+5. Executing SETUNDEF pass (replace undef values with defined constants).
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Core.
+<suppressed ~111 debug messages>
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Core'.
+<suppressed ~1531 debug messages>
+Removed a total of 537 cells.
+
+6.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Core..
+Removed 13743 unused cells and 14765 unused wires.
+<suppressed ~19858 debug messages>
+
+6.5. Finished fast OPT passes.
+
+7. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+8. Printing statistics.
+
+=== Core ===
+
+   Number of wires:              73037
+   Number of wire bits:         479182
+   Number of public wires:       55474
+   Number of public wire bits:  396128
+   Number of ports:                 23
+   Number of port bits:            130
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              51740
+     $add                          125
+     $and                         4654
+     $anyinit                     4959
+     $anyseq                        63
+     $assert                        16
+     $assume                         2
+     $eq                          3582
+     $ff                            23
+     $ge                            62
+     $gt                             9
+     $le                            14
+     $logic_not                    345
+     $lt                           115
+     $mem_v2                        69
+     $mul                            2
+     $mux                        32144
+     $ne                            76
+     $not                         1260
+     $or                          2825
+     $reduce_and                   434
+     $reduce_bool                  347
+     $reduce_or                    227
+     $scopeinfo                    151
+     $shl                          101
+     $shr                           29
+     $sshr                           2
+     $sub                           21
+     $xor                           83
+
+9. Executing BTOR backend.
+
+9.1. Executing BMUXMAP pass.
+
+9.2. Executing DEMUXMAP pass.
+
+9.3. Executing BWMUXMAP pass.
+Warning: No driver for signal \bt.core._GEN_2298 [1:0].
+Warning: No driver for signal \bt.core._GEN_2299 [1:0].
+Warning: No driver for signal \bt.core._GEN_2300 [1:0].
+Warning: No driver for signal \bt.core._GEN_2301 [1:0].
+Warning: No driver for signal \bt.core._GEN_2302 [1:0].
+Warning: No driver for signal \bt.core._GEN_2303 [1:0].
+Warning: No driver for signal \bt.core._GEN_2304 [1:0].
+Warning: No driver for signal \bt.core._GEN_2305 [1:0].
+Warning: No driver for signal \bt.core._GEN_2306 [1:0].
+Warning: No driver for signal \bt.core._GEN_2307 [1:0].
+Warning: No driver for signal \bt.core._GEN_2308 [1:0].
+Warning: No driver for signal \bt.core._GEN_2309 [1:0].
+Warning: No driver for signal \bt.core._GEN_2310 [1:0].
+Warning: No driver for signal \bt.core._GEN_2318 [3].
+Warning: No driver for signal { \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [19:0] }.
+Warning: No driver for signal { \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [19:0] }.
+Warning: No driver for signal \bt.core._GEN_3205.
+Warning: No driver for signal \bt.core._GEN_3271.
+Warning: No driver for signal \bt.core._T_27 [4].
+Warning: No driver for signal \bt.core._T_441.
+Warning: No driver for signal \bt.core._T_462.
+Warning: No driver for signal \bt.core._b1_mispredict_mask_T_4 [15:12].
+Warning: No driver for signal \bt.core._cfi_idx_T_2 [3].
+Warning: No driver for signal \bt.core._io_rvfi_mem_rmask_T.
+Warning: No driver for signal \bt.core._io_rvfi_mem_rmask_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_mem_wmask_T.
+Warning: No driver for signal \bt.core._io_rvfi_mem_wmask_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_pc_rdata_T_1.
+Warning: No driver for signal { \bt.core._io_rvfi_pc_rdata_T_1 \bt.core._io_rvfi_pc_rdata_T_2 [39] }.
+Warning: No driver for signal \bt.core._io_rvfi_pc_rdata_T_4.
+Warning: No driver for signal { \bt.core._io_rvfi_pc_rdata_T_4 \bt.core._io_rvfi_pc_rdata_T_5 [39] }.
+Warning: No driver for signal \bt.core._io_rvfi_pc_wdata_T.
+Warning: No driver for signal \bt.core._io_rvfi_pc_wdata_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rd_addr_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rd_addr_T_3.
+Warning: No driver for signal \bt.core._io_rvfi_rs1_rdata_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rs1_rdata_T_3.
+Warning: No driver for signal \bt.core._io_rvfi_rs2_rdata_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rs2_rdata_T_3.
+Warning: No driver for signal \bt.core._iregfile_io_write_ports_2_bits_data_T [64].
+Warning: No driver for signal \bt.core._jal_br_target_T_10 [63:40].
+Warning: No driver for signal \bt.core._next_ghist_new_history_old_history_T_6 [64].
+Warning: No driver for signal \bt.core._next_rob_io_commit_uops_0_ldst.
+Warning: No driver for signal \bt.core._rv_inst_npc_0_T_4.
+Warning: No driver for signal \bt.core._rv_inst_npc_1_T_4.
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit._GEN_8 [3].
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit._cfi_idx_T_2 [3].
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit.alu._shout_r_T_5 [64].
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit.io_get_ftq_pc_entry_start_bank.
+Warning: No driver for signal \bt.core.alu_exe_unit_1.ALUUnit.alu._shout_r_T_5 [64].
+Warning: No driver for signal \bt.core.alu_exe_unit_1.DivUnit.div.nextMulReg [129].
+Warning: No driver for signal \bt.core.alu_exe_unit_1._io_fu_types_T_6 [5].
+Warning: No driver for signal \bt.core.csr._GEN_292 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_337 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_340 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_346 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_349 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_352 [63:9].
+Warning: No driver for signal \bt.core.csr._GEN_353 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_355 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_359 [1].
+Warning: No driver for signal \bt.core.csr._GEN_372 [63:39].
+Warning: No driver for signal \bt.core.csr._GEN_374 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_377 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_379 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_389 [1].
+Warning: No driver for signal \bt.core.csr._GEN_403 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_405 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_407 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_408 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_411 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_414 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_417 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_420 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_423 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_426 [63:9].
+Warning: No driver for signal \bt.core.csr._GEN_427 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_429 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_434 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_435 [63:39].
+Warning: No driver for signal \bt.core.csr._GEN_437 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_440 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_442 [63:32].
+Warning: No driver for signal \bt.core.csr._reg_mepc_T [63:40].
+Warning: No driver for signal \bt.core.csr._reg_mepc_T_2 [63:40].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs [90:22].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_hi_lo [27:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_lo_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs [90:22].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_hi_lo [27:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_lo_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs [3].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs_1 [5].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs_1 [8:7].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs_2 [5].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs [3].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs_1 [5].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs_1 [8:7].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs_2 [5].
+Warning: No driver for signal \bt.core.csr.m_interrupts [63:16].
+Warning: No driver for signal \bt.core.csr.notDebugTVec_interruptVec [63:40].
+Warning: No driver for signal \bt.core.debug_tsc_reg.
+Warning: No driver for signal \bt.core.dec_brmask_logic._GEN_23 [15:12].
+Warning: No driver for signal \bt.core.dec_brmask_logic._GEN_47 [15:12].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_invMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_invMatrixOutputs_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_invMatrixOutputs_lo_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_orMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_orMatrixOutputs_lo_24 [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_orMatrixOutputs_lo_lo_17 [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.io_deq_uop_debug_fsrc.
+Warning: No driver for signal \bt.core.decode_units_0.io_deq_uop_debug_inst.
+Warning: No driver for signal \bt.core.decode_units_0.io_deq_uop_debug_pc.
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_invMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_invMatrixOutputs_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_invMatrixOutputs_lo_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_orMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_orMatrixOutputs_lo_24 [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_orMatrixOutputs_lo_lo_17 [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.io_deq_uop_debug_fsrc.
+Warning: No driver for signal \bt.core.decode_units_1.io_deq_uop_debug_inst.
+Warning: No driver for signal \bt.core.decode_units_1.io_deq_uop_debug_pc.
+Warning: No driver for signal \bt.core.difftest_delayer_1_i_instr.
+Warning: No driver for signal \bt.core.difftest_delayer_i_instr.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_1.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_10.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_11.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_12.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_13.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_14.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_15.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_16.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_17.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_18.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_19.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_2.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_20.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_21.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_22.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_23.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_24.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_25.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_26.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_27.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_28.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_29.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_3.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_30.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_31.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_4.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_5.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_6.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_7.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_8.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_9.
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_13 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_15 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_17 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_19 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_21 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_22 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_23 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_25 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_27 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_29 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_31 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_33 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_35 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_37 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_39 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_41 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_43 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_45 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_47 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_49 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_51 [2].
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_ppred_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_prs1_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_prs2_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_prs3_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_0_addr [39:0].
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_0_rdata.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_0_wdata.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_1_addr [39:0].
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_1_rdata.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_1_wdata.
+Warning: No driver for signal \bt.core.io_rvfi_rd_wdata.
+Warning: No driver for signal { \bt.core._GEN_3205 \bt.core.io_rvfi_rs1_addr [4:0] }.
+Warning: No driver for signal { \bt.core._GEN_3271 \bt.core.io_rvfi_rs2_addr [4:0] }.
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1._rrd_cs_decoder_decoded_orMatrixOutputs_T [8:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1._rrd_cs_decoder_decoded_orMatrixOutputs_T_23 [2:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs_lo_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_orMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_orMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_orMatrixOutputs_lo_8 [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2._rrd_cs_decoder_decoded_orMatrixOutputs_T_29 [2:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2._rrd_cs_decoder_decoded_orMatrixOutputs_T_6 [8:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs_lo_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs_lo_9 [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs_lo_lo_5 [3].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_13 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_15 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_17 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_19 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_21 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_22 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_23 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_25 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_27 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_29 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_31 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_33 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_35 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._num_available_T_6 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_ppred_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_prs1_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_prs2_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_prs3_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_3 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_5 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_6 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_12 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_17 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_18 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_19 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_3 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_9 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_0_prs1_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_0_prs2_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_1_prs1_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_1_prs2_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable.busy_table_next [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable.busy_table_wb [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_34 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_35 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_36 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_37 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_38 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_39 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_40 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_41 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_0_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_11_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_11_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_1_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_2_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_2_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_3_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_3_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_4_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_5_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_6_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_7_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_8_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_8_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_9_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_9_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._list_req_T [15:12].
+Warning: No driver for signal \bt.core.rename_stage.freelist._list_req_T_2 [15:12].
+Warning: No driver for signal \bt.core.rename_stage.freelist.alloc_masks_0 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist.allocs_1 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_0_debug_fsrc.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_0_debug_inst.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_0_debug_pc.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_1_debug_fsrc.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_1_debug_inst.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_1_debug_pc.
+Warning: No driver for signal \bt.core.rob.io_rob_tail_idx [0].
+Warning: No driver for signal \bt.dcache._readys_T_5 [2].
+Warning: No driver for signal \bt.dcache.meta_0.waddr [1].
+Warning: No driver for signal \bt.dcache.mshrs._mshr_alloc_idx_idx_T_1 [1].
+Warning: No driver for signal \bt.dcache.mshrs._readys_T_19 [2].
+Warning: No driver for signal \bt.dcache.mshrs._readys_T_4 [4].
+Warning: No driver for signal \bt.dcache.mshrs._readys_T_6 [2].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_0._GEN_2435 [36:3].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_0._io_refill_bits_addr_T_1 [39:7].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_1._GEN_2435 [36:3].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_1._io_refill_bits_addr_T_1 [39:7].
+Warning: No driver for signal \bt.frontend._GEN_63 [0].
+Warning: No driver for signal \bt.frontend._f1_predicted_ghist_new_history_old_history_T_5 [64].
+Warning: No driver for signal \bt.frontend._f2_predicted_ghist_new_history_old_history_T_5 [64].
+Warning: No driver for signal \bt.frontend._f3_predicted_ghist_new_history_old_history_T_6 [64].
+Warning: No driver for signal \bt.frontend.bpd_decoder._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder0._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder0._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder0.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder0.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder1._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder1._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder1.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder1.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.f2_mask [6:4].
+Warning: No driver for signal \bt.frontend.f3.io_enq_bits_fsrc [0].
+Warning: No driver for signal \bt.frontend.f4.io_deq_bits_fsrc.
+Warning: No driver for signal \bt.frontend.ftq._GEN_35 [3].
+Warning: No driver for signal \bt.frontend.ftq._new_cfi_idx_T_2 [3].
+Warning: No driver for signal \bt.frontend.ftq._new_ghist_new_history_old_history_T_6 [64].
+Warning: No driver for signal \bt.frontend.icache._s1_vb_T_1 [1].
+Warning: No driver for signal \bt.frontend.icache._vb_array_T_4 [3:2].
+Warning: No driver for signal \bt.frontend.icache._vb_array_T_7 [3:2].
+Warning: No driver for signal \bt.frontend.icache._vb_array_T_8 [3:2].
+Warning: No driver for signal \bt.frontend.tlb._mpu_ppn_T_28 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_14 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_17 [26:18].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_22 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_25 [26:18].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_26 [26:18].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_30 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_6 [26:9].
+Warning: No driver for signal \bt.lsu._T_259 [15:1].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_104 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_119 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_134 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_14 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_149 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_164 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_179 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_194 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_209 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_224 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_239 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_29 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_44 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_59 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_74 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_89 [14:8].
+Warning: No driver for signal \bt.lsu._lcam_mask_mask_T_14 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_104 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_119 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_134 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_14 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_149 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_164 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_179 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_194 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_209 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_224 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_239 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_29 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_44 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_59 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_74 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_89 [14:8].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_18 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_22 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_25 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_26 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_30 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_34 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_38 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_6 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_9 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._r_superpage_repl_addr_T_5 [3].
+Warning: No driver for signal \bt.ptw.io_dpath_perf_pte_miss.
+Warning: No driver for signal \bt.ptw.pte_addr_raw_pte_addr [55:32].
+
+10. Executing BTOR backend.
+
+10.1. Executing BMUXMAP pass.
+
+10.2. Executing DEMUXMAP pass.
+
+10.3. Executing BWMUXMAP pass.
+Warning: No driver for signal \bt.core._GEN_2298 [1:0].
+Warning: No driver for signal \bt.core._GEN_2299 [1:0].
+Warning: No driver for signal \bt.core._GEN_2300 [1:0].
+Warning: No driver for signal \bt.core._GEN_2301 [1:0].
+Warning: No driver for signal \bt.core._GEN_2302 [1:0].
+Warning: No driver for signal \bt.core._GEN_2303 [1:0].
+Warning: No driver for signal \bt.core._GEN_2304 [1:0].
+Warning: No driver for signal \bt.core._GEN_2305 [1:0].
+Warning: No driver for signal \bt.core._GEN_2306 [1:0].
+Warning: No driver for signal \bt.core._GEN_2307 [1:0].
+Warning: No driver for signal \bt.core._GEN_2308 [1:0].
+Warning: No driver for signal \bt.core._GEN_2309 [1:0].
+Warning: No driver for signal \bt.core._GEN_2310 [1:0].
+Warning: No driver for signal \bt.core._GEN_2318 [3].
+Warning: No driver for signal { \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [39] \bt.core._GEN_2326 [19:0] }.
+Warning: No driver for signal { \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [39] \bt.core._GEN_2327 [19:0] }.
+Warning: No driver for signal \bt.core._GEN_3205.
+Warning: No driver for signal \bt.core._GEN_3271.
+Warning: No driver for signal \bt.core._T_27 [4].
+Warning: No driver for signal \bt.core._T_441.
+Warning: No driver for signal \bt.core._T_462.
+Warning: No driver for signal \bt.core._b1_mispredict_mask_T_4 [15:12].
+Warning: No driver for signal \bt.core._cfi_idx_T_2 [3].
+Warning: No driver for signal \bt.core._io_rvfi_mem_rmask_T.
+Warning: No driver for signal \bt.core._io_rvfi_mem_rmask_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_mem_wmask_T.
+Warning: No driver for signal \bt.core._io_rvfi_mem_wmask_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_pc_rdata_T_1.
+Warning: No driver for signal { \bt.core._io_rvfi_pc_rdata_T_1 \bt.core._io_rvfi_pc_rdata_T_2 [39] }.
+Warning: No driver for signal \bt.core._io_rvfi_pc_rdata_T_4.
+Warning: No driver for signal { \bt.core._io_rvfi_pc_rdata_T_4 \bt.core._io_rvfi_pc_rdata_T_5 [39] }.
+Warning: No driver for signal \bt.core._io_rvfi_pc_wdata_T.
+Warning: No driver for signal \bt.core._io_rvfi_pc_wdata_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rd_addr_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rd_addr_T_3.
+Warning: No driver for signal \bt.core._io_rvfi_rs1_rdata_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rs1_rdata_T_3.
+Warning: No driver for signal \bt.core._io_rvfi_rs2_rdata_T_1.
+Warning: No driver for signal \bt.core._io_rvfi_rs2_rdata_T_3.
+Warning: No driver for signal \bt.core._iregfile_io_write_ports_2_bits_data_T [64].
+Warning: No driver for signal \bt.core._jal_br_target_T_10 [63:40].
+Warning: No driver for signal \bt.core._next_ghist_new_history_old_history_T_6 [64].
+Warning: No driver for signal \bt.core._next_rob_io_commit_uops_0_ldst.
+Warning: No driver for signal \bt.core._rv_inst_npc_0_T_4.
+Warning: No driver for signal \bt.core._rv_inst_npc_1_T_4.
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit._GEN_8 [3].
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit._cfi_idx_T_2 [3].
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit.alu._shout_r_T_5 [64].
+Warning: No driver for signal \bt.core.alu_exe_unit.ALUUnit.io_get_ftq_pc_entry_start_bank.
+Warning: No driver for signal \bt.core.alu_exe_unit_1.ALUUnit.alu._shout_r_T_5 [64].
+Warning: No driver for signal \bt.core.alu_exe_unit_1.DivUnit.div.nextMulReg [129].
+Warning: No driver for signal \bt.core.alu_exe_unit_1._io_fu_types_T_6 [5].
+Warning: No driver for signal \bt.core.csr._GEN_292 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_337 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_340 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_346 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_349 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_352 [63:9].
+Warning: No driver for signal \bt.core.csr._GEN_353 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_355 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_359 [1].
+Warning: No driver for signal \bt.core.csr._GEN_372 [63:39].
+Warning: No driver for signal \bt.core.csr._GEN_374 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_377 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_379 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_389 [1].
+Warning: No driver for signal \bt.core.csr._GEN_403 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_405 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_407 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_408 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_411 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_414 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_417 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_420 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_423 [39:6].
+Warning: No driver for signal \bt.core.csr._GEN_426 [63:9].
+Warning: No driver for signal \bt.core.csr._GEN_427 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_429 [63:6].
+Warning: No driver for signal \bt.core.csr._GEN_434 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_435 [63:39].
+Warning: No driver for signal \bt.core.csr._GEN_437 [63:40].
+Warning: No driver for signal \bt.core.csr._GEN_440 [63:32].
+Warning: No driver for signal \bt.core.csr._GEN_442 [63:32].
+Warning: No driver for signal \bt.core.csr._reg_mepc_T [63:40].
+Warning: No driver for signal \bt.core.csr._reg_mepc_T_2 [63:40].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs [90:22].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_hi_lo [27:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_invMatrixOutputs_lo_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs [90:22].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_hi_lo [27:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_decoded_orMatrixOutputs_lo_lo_lo_lo [2:0].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs [3].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs_1 [5].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs_1 [8:7].
+Warning: No driver for signal \bt.core.csr.decoded_invMatrixOutputs_2 [5].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs [3].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs_1 [5].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs_1 [8:7].
+Warning: No driver for signal \bt.core.csr.decoded_orMatrixOutputs_2 [5].
+Warning: No driver for signal \bt.core.csr.m_interrupts [63:16].
+Warning: No driver for signal \bt.core.csr.notDebugTVec_interruptVec [63:40].
+Warning: No driver for signal \bt.core.debug_tsc_reg.
+Warning: No driver for signal \bt.core.dec_brmask_logic._GEN_23 [15:12].
+Warning: No driver for signal \bt.core.dec_brmask_logic._GEN_47 [15:12].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_invMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_invMatrixOutputs_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_invMatrixOutputs_lo_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_orMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_orMatrixOutputs_lo_24 [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.cs_decoder_decoded_orMatrixOutputs_lo_lo_17 [9:8].
+Warning: No driver for signal \bt.core.decode_units_0.io_deq_uop_debug_fsrc.
+Warning: No driver for signal \bt.core.decode_units_0.io_deq_uop_debug_inst.
+Warning: No driver for signal \bt.core.decode_units_0.io_deq_uop_debug_pc.
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_invMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_invMatrixOutputs_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_invMatrixOutputs_lo_lo [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_orMatrixOutputs [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_orMatrixOutputs_lo_24 [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.cs_decoder_decoded_orMatrixOutputs_lo_lo_17 [9:8].
+Warning: No driver for signal \bt.core.decode_units_1.io_deq_uop_debug_fsrc.
+Warning: No driver for signal \bt.core.decode_units_1.io_deq_uop_debug_inst.
+Warning: No driver for signal \bt.core.decode_units_1.io_deq_uop_debug_pc.
+Warning: No driver for signal \bt.core.difftest_delayer_1_i_instr.
+Warning: No driver for signal \bt.core.difftest_delayer_i_instr.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_1.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_10.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_11.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_12.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_13.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_14.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_15.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_16.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_17.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_18.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_19.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_2.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_20.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_21.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_22.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_23.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_24.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_25.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_26.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_27.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_28.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_29.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_3.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_30.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_31.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_4.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_5.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_6.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_7.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_8.
+Warning: No driver for signal \bt.core.difftest_module_1_io_bits_value_9.
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_13 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_15 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_17 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_19 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_21 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_22 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_23 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_25 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_27 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_29 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_31 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_33 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_35 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_37 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_39 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_41 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_43 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_45 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_47 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_49 [2].
+Warning: No driver for signal \bt.core.int_issue_unit._GEN_51 [2].
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_ppred_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_prs1_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_prs2_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_prs3_busy.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_0.io_out_uop_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_1.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_10.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_11.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_12.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_13.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_14.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_15.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_16.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_17.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_18.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_19.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_2.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_3.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_4.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_5.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_6.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_7.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_8.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_fp_val.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_mem_signed.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_mem_size.
+Warning: No driver for signal \bt.core.int_issue_unit.slots_9.io_in_uop_bits_uses_ldq.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_0_addr [39:0].
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_0_rdata.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_0_wdata.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_1_addr [39:0].
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_1_rdata.
+Warning: No driver for signal \bt.core.io_lsu_debug_mem_info_1_wdata.
+Warning: No driver for signal \bt.core.io_rvfi_rd_wdata.
+Warning: No driver for signal { \bt.core._GEN_3205 \bt.core.io_rvfi_rs1_addr [4:0] }.
+Warning: No driver for signal { \bt.core._GEN_3271 \bt.core.io_rvfi_rs2_addr [4:0] }.
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1._rrd_cs_decoder_decoded_orMatrixOutputs_T [8:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1._rrd_cs_decoder_decoded_orMatrixOutputs_T_23 [2:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_invMatrixOutputs_lo_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_orMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_orMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_1.rrd_cs_decoder_decoded_orMatrixOutputs_lo_8 [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2._rrd_cs_decoder_decoded_orMatrixOutputs_T_29 [2:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2._rrd_cs_decoder_decoded_orMatrixOutputs_T_6 [8:1].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_invMatrixOutputs_lo_lo [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs [19:18].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs_lo_9 [3].
+Warning: No driver for signal \bt.core.iregister_read.rrd_decode_unit_2.rrd_cs_decoder_decoded_orMatrixOutputs_lo_lo_5 [3].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_13 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_15 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_17 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_19 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_21 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_22 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_23 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_25 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_27 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_29 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_31 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_33 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._GEN_35 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit._num_available_T_6 [2].
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_ppred_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_prs1_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_prs2_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_prs3_busy.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_0.io_out_uop_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_1.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_10.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_11.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_2.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_3.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_4.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_5.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_6.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_7.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_8.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_br_tag.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_bypassable.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_dst_rtype.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_edge_inst.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_ftq_idx.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_br.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_jal.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_jalr.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_rvc.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_is_sfb.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_ldst_val.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_pc_lob.
+Warning: No driver for signal \bt.core.mem_issue_unit.slots_9.io_in_uop_bits_taken.
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_3 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_5 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_next_T_6 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_12 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_17 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_18 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_19 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_3 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._busy_table_wb_T_9 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_0_prs1_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_0_prs2_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_1_prs1_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable._io_busy_resps_1_prs2_busy_T [79:1].
+Warning: No driver for signal \bt.core.rename_stage.busytable.busy_table_next [127:80].
+Warning: No driver for signal \bt.core.rename_stage.busytable.busy_table_wb [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_34 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_35 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_36 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_37 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_38 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_39 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_40 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._GEN_41 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_0_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_11_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_11_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_1_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_2_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_2_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_3_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_3_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_4_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_5_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_6_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_7_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_8_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_8_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_9_T_2 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._br_alloc_lists_9_T_8 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist._list_req_T [15:12].
+Warning: No driver for signal \bt.core.rename_stage.freelist._list_req_T_2 [15:12].
+Warning: No driver for signal \bt.core.rename_stage.freelist.alloc_masks_0 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.freelist.allocs_1 [127:80].
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_0_debug_fsrc.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_0_debug_inst.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_0_debug_pc.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_1_debug_fsrc.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_1_debug_inst.
+Warning: No driver for signal \bt.core.rename_stage.io_ren2_uops_1_debug_pc.
+Warning: No driver for signal \bt.core.rob.io_rob_tail_idx [0].
+Warning: No driver for signal \bt.dcache._readys_T_5 [2].
+Warning: No driver for signal \bt.dcache.meta_0.waddr [1].
+Warning: No driver for signal \bt.dcache.mshrs._mshr_alloc_idx_idx_T_1 [1].
+Warning: No driver for signal \bt.dcache.mshrs._readys_T_19 [2].
+Warning: No driver for signal \bt.dcache.mshrs._readys_T_4 [4].
+Warning: No driver for signal \bt.dcache.mshrs._readys_T_6 [2].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_0._GEN_2435 [36:3].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_0._io_refill_bits_addr_T_1 [39:7].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_1._GEN_2435 [36:3].
+Warning: No driver for signal \bt.dcache.mshrs.mshrs_1._io_refill_bits_addr_T_1 [39:7].
+Warning: No driver for signal \bt.frontend._GEN_63 [0].
+Warning: No driver for signal \bt.frontend._f1_predicted_ghist_new_history_old_history_T_5 [64].
+Warning: No driver for signal \bt.frontend._f2_predicted_ghist_new_history_old_history_T_5 [64].
+Warning: No driver for signal \bt.frontend._f3_predicted_ghist_new_history_old_history_T_6 [64].
+Warning: No driver for signal \bt.frontend.bpd_decoder._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder0._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder0._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder0.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder0.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder1._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder1._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder1.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder1.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_1.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2._bpd_csignals_decoded_T_18 [5:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2._bpd_csignals_decoded_T_20 [6].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2.bpd_csignals_decoded_invMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.bpd_decoder_2.bpd_csignals_decoded_orMatrixOutputs [1:0].
+Warning: No driver for signal \bt.frontend.f2_mask [6:4].
+Warning: No driver for signal \bt.frontend.f3.io_enq_bits_fsrc [0].
+Warning: No driver for signal \bt.frontend.f4.io_deq_bits_fsrc.
+Warning: No driver for signal \bt.frontend.ftq._GEN_35 [3].
+Warning: No driver for signal \bt.frontend.ftq._new_cfi_idx_T_2 [3].
+Warning: No driver for signal \bt.frontend.ftq._new_ghist_new_history_old_history_T_6 [64].
+Warning: No driver for signal \bt.frontend.icache._s1_vb_T_1 [1].
+Warning: No driver for signal \bt.frontend.icache._vb_array_T_4 [3:2].
+Warning: No driver for signal \bt.frontend.icache._vb_array_T_7 [3:2].
+Warning: No driver for signal \bt.frontend.icache._vb_array_T_8 [3:2].
+Warning: No driver for signal \bt.frontend.tlb._mpu_ppn_T_28 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_14 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_17 [26:18].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_22 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_25 [26:18].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_26 [26:18].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_30 [26:9].
+Warning: No driver for signal \bt.frontend.tlb._ppn_T_6 [26:9].
+Warning: No driver for signal \bt.lsu._T_259 [15:1].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_104 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_119 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_134 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_14 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_149 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_164 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_179 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_194 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_209 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_224 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_239 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_29 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_44 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_59 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_74 [14:8].
+Warning: No driver for signal \bt.lsu._l_mask_mask_T_89 [14:8].
+Warning: No driver for signal \bt.lsu._lcam_mask_mask_T_14 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_104 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_119 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_134 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_14 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_149 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_164 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_179 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_194 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_209 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_224 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_239 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_29 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_44 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_59 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_74 [14:8].
+Warning: No driver for signal \bt.lsu._write_mask_mask_T_89 [14:8].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_18 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_22 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_25 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_26 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_30 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_34 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_38 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_6 [26:9].
+Warning: No driver for signal \bt.lsu.dtlb._ppn_T_9 [26:18].
+Warning: No driver for signal \bt.lsu.dtlb._r_superpage_repl_addr_T_5 [3].
+Warning: No driver for signal \bt.ptw.io_dpath_perf_pte_miss.
+Warning: No driver for signal \bt.ptw.pte_addr_raw_pte_addr [55:32].
+
+Warnings: 635 unique messages, 1270 total
+End of script. Logfile hash: 8636b46a81, CPU: user 11.15s system 0.22s, MEM: 652.23 MB peak
+Yosys 0.50+56 (git sha1 78960292d, clang++ 18.1.8 -fPIC -O3)
+Time spent: 30% 1x opt_merge (3 sec), 26% 1x opt_clean (2 sec), ...
